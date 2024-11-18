@@ -1,0 +1,26 @@
+
+/* customStyles.css */
+
+.headerContainer {
+  @apply w-full bg-transparent flex flex-col items-center;
+}
+
+.tabs {
+  @apply flex gap-8;
+}
+
+.tabActive {
+  @apply text-[#EEB91D] font-medium cursor-pointer;
+}
+
+.tabInactive {
+  @apply text-white font-medium cursor-pointer;
+}
+
+.accountButton {
+  @apply font-semibold p-3 px-8 rounded-full text-black bg-gradient-to-r from-[#EEB91D] to-[#FFE878];
+}
+
+.searchIcon {
+  @apply rounded-full scale-90 items-center justify-center flex;
+}

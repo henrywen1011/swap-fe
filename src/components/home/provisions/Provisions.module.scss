@@ -1,0 +1,11 @@
+/* Provision.css */
+.provisionContainer {
+    @apply w-full p-4 max-w-[65rem] lg:max-w-[72rem] flex flex-col mt-[2rem] gap-16 items-center relative;
+}
+
+.title {
+    @apply text-white font-semibold text-3xl md:mt-[4rem];
+}
+
+/* Providers.module.css */
+

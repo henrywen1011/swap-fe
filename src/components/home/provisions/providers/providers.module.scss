@@ -1,0 +1,65 @@
+.liquidityContainer {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.liquidityTitle {
+    @apply text-2xl font-bold mb-[2rem] text-white
+}
+
+.liquidityProviders {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scroll-left 30s linear infinite;
+}
+
+.providerImage {
+    height: 40px;
+    width: auto;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+.liquidityContainer {
+    @apply overflow-hidden;
+}
+
+.liquidityTitle {
+    @apply relative z-[2] mt-[4rem];
+}
+
+.liquidityProviders {
+    @apply overflow-auto relative;
+}
+
+.providerImage {
+    margin-bottom: 1rem;
+    /* Space below image on mobile */
+}
+
+.liquidityContainer {
+    @apply w-full flex flex-col gap-4 items-center;
+}
+
+.liquidityTitle {
+    @apply text-white font-semibold text-2xl;
+}
+
+.liquidityProviders {
+    @apply flex gap-4;
+}
+
+.providerImage {
+    @apply w-[8rem] p-1 px-4 rounded-[2rem] bg-[#ffffff21];
+}

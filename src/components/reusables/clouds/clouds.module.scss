@@ -1,0 +1,10 @@
+/* BrownCloud.module.css */
+
+.container {
+    @apply relative w-full h-screen flex justify-center items-center bg-blue-100;
+  }
+  
+  .cloud {
+    @apply absolute w-32 h-20 bg-brown-500 opacity-80 rounded-full filter blur-lg;
+  }
+  

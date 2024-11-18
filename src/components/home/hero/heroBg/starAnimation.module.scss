@@ -1,0 +1,19 @@
+/* StarAnimation.module.css */
+
+.star-container {
+    @apply flex flex-col items-center;
+  }
+  
+  .star {
+    @apply w-1 h-1 bg-yellow-400 rounded-full;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.8);
+  }
+  
+  .star-line {
+    @apply mt-1 bg-gradient-to-b from-yellow-400 to-transparent h-64 w-[1px];
+  }
+  
+  .animation-container {
+    @apply relative w-full rounded-[2rem] h-screen overflow-hidden z-[2] bg-transparent;
+  }
+  

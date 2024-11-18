@@ -1,0 +1,17 @@
+/* BubbleComponent.module.css */
+
+.bubble {
+  @apply relative w-32 h-96 bg-transparent border-2 border-[#98CFFC] rounded-[40%] opacity-40 shadow-lg;
+}
+
+.rocketShape {
+  @apply absolute inset-0 bg-transparent border-2 border-[#98CFFC] opacity-40 rounded-[50%];
+}
+
+.innerReflection {
+  @apply absolute inset-0 bg-gradient-to-r from-white/40 to-transparent opacity-30 rounded-[40%] blur-md;
+}
+
+.effectLayer {
+  @apply absolute inset-0 rounded-[40%] bg-transparent border-2 border-[#98CFFC] blur-md;
+}

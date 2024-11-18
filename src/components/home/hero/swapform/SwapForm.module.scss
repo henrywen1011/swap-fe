@@ -1,0 +1,72 @@
+.swapForm {
+    @apply relative flex flex-col gap-8;
+    @apply w-full relative max-w-[50rem] lg:max-w-[60rem] bottom-[-35%] z-[2] transform -translate-y-[-35%] bg-white p-4 py-6 md:p-6 md:left-1/2 md:-translate-x-1/2 bg-[#FFFFFF14] rounded-[2rem]
+}
+
+.swapFormHidden {
+    @apply hidden;
+}
+
+.swapHeader {
+    @apply w-full flex flex-col md:flex-row justify-between items-center;
+}
+
+.headerText {
+    @apply text-white font-medium;
+}
+
+.toggleSwitchContainer {
+    @apply flex p-2 gap-2 px-4 rounded-full border border-[#FFE878];
+}
+
+.buttonContainer {
+    @apply p-2 md:px-4 bg-[#0C0C0C59] rounded-full flex gap-2 md:gap-4 items-center justify-center;
+}
+
+.button {
+    @apply p-2 md:p-3 px-8 md:px-12 transition-all duration-500 rounded-[2rem];
+}
+
+.activeButton {
+    @apply bg-[#FFE878] text-black font-semibold;
+}
+
+.gridContainer {
+    @apply grid md:grid-cols-2 gap-4 w-full;
+}
+
+.inputWrapper {
+    @apply flex flex-col w-full gap-4 items-start;
+}
+
+.inputField {
+    @apply bg-[#0B0B0B5C] focus:outline-none p-4 px-6 w-full rounded-full;
+}
+
+.iconContainer {
+    @apply absolute right-4 top-1/2 flex gap-2 items-center transform -translate-y-1/2 cursor-pointer;
+}
+
+.walletField {
+    @apply relative w-full;
+}
+
+.checkboxContainer {
+    @apply w-full flex items-center justify-center gap-2;
+}
+
+.submitButton {
+    @apply border hover:bg-[#FFE878] hover:text-black hover:font-semibold transition-all duration-500 border-[#EEB91D] rounded-full p-4;
+}
+
+.termsText {
+    @apply capitalize;
+}
+
+.link {
+    @apply text-[#3CFF00];
+}
+
+.centerText {
+    @apply text-center;
+}

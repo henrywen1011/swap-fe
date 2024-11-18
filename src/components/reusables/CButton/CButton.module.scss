@@ -1,0 +1,180 @@
+@import "../../../styles/variables.scss";
+
+.custom_button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  background-color: transparent;
+  color: $color-text-primary;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+  border-radius: 4px;
+  border-color: $color-dark-primary;
+  line-height: 20px;
+  height: 42px;
+  box-sizing: border-box;
+  border: none;
+  font-family: $font-primary;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 2rem;
+  outline: none;
+
+  &._small {
+    height: 36px;
+
+    &._rounded {
+      border-radius: 8px;
+    }
+  }
+
+  &._big {
+    height: 50px;
+
+    &._rounded {
+      border-radius: 12px;
+    }
+  }
+
+  &._tiny {
+    height: 32px;
+    padding: 0 8px;
+    font-size: 12px;
+    &._rounded {
+      border-radius: 6px;
+    }
+  }
+
+  &._icon {
+    width: 48px;
+    padding: 0;
+    flex-shrink: 0;
+
+    &._small {
+      width: 40px;
+    }
+
+    &._big {
+      width: 52px;
+    }
+
+    &._tiny {
+      width: 32px;
+    }
+  }
+
+  &._pilled {
+    border-radius: 30px;
+  }
+
+  &._rounded {
+    border-radius: 4px;
+  }
+
+  &._squared {
+    border-radius: 0;
+  }
+
+  &._gradient {
+    &._info {
+      background: linear-gradient(95deg, $color-orange 0%, #100e17 100%);
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &._primary {
+      background: linear-gradient(
+        95deg,
+        $color-dark-primary 0%,
+        $color-primary 100%
+      );
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &._warn {
+      background: linear-gradient(95deg, $color-red 0%, #100e17 100%);
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &._info {
+    background-color: $color-orange;
+    border: 1px solid $color-orange;
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($color-orange, 0.7);
+    }
+  }
+
+  &._primary {
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+    &:hover {
+      background-color: rgba($color-primary, 0.7);
+    }
+  }
+
+  &._warn {
+    background-color: $color-red;
+    border: 1px solid $color-red;
+    &:hover {
+      background-color: rgba($color-red, 0.7);
+    }
+  }
+
+  &._secondary {
+    background-color: rgba(217, 230, 255, 0.1);
+    border: 0px solid rgba(217, 230, 255, 0.1);
+
+    &._active {
+      color: #f9fafa;
+      background-color: rgba(217, 230, 255, 0.2);
+    }
+  }
+
+  &._outline {
+    color: white;
+    border-width: 1px !important;
+    background-color: transparent !important;
+
+    &:hover {
+      background-color: $color-primary !important;
+      color: black;
+      opacity: 1;
+    }
+  }
+
+  &._filled {
+    width: 100%;
+  }
+
+  &.menu-button {
+    padding: 4px;
+    &:hover {
+      background-color: rgba(217, 230, 255, 0.1);
+    }
+
+    &.active {
+      background-color: rgba(217, 230, 255, 0.1);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  &:disabled {
+    // pointer-events: none;
+    cursor: not-allowed;
+    // background-color: transparent;
+    opacity: 0.3;
+  }
+}

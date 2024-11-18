@@ -1,0 +1,25 @@
+// filters: https://angel-rs.github.io/css-color-filter-generator/
+$color-black: #000;
+$color-white: #fff;
+$color-white-filter: brightness(0) saturate(100%) invert(100%) sepia(100%)
+  saturate(0%) hue-rotate(92deg) brightness(107%) contrast(101%);
+$color-primary: rgb(255, 232, 120);
+$color-dark-primary: #eeb91d;
+$color-orange: #f39718;
+$color-red: #f04438;
+
+$color-orange-filter: brightness(0) saturate(100%) invert(62%) sepia(54%)
+  saturate(917%) hue-rotate(349deg) brightness(98%) contrast(95%);
+
+$color-scroll: $color-primary;
+$color-background-primary: #0e0c15;
+$color-text-primary: $color-black;
+$color-text-secondary: #c2c2c2;
+$color-text-darkgray: #8f8f8f;
+
+$color-input-bg: #0b0b0b5c;
+$color-input-border: $color-primary;
+
+$font-primary: "Sora", sans-serif;
+
+$animation1: 0.3s;

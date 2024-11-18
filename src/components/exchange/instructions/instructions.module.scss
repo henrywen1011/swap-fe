@@ -1,0 +1,23 @@
+.container {
+    @apply w-full flex flex-col gap-[5rem] text-white max-w-[80rem]
+}
+
+.instructionContainer {
+    @apply items-center justify-between flex flex-col gap-8
+}
+
+.imageContainer {
+    @apply w-full md:w-[47%] overflow-hidden bg-gradient-to-r from-[#44360c] p-3 to-[#3d371c] rounded-[1rem]
+}
+
+.image {
+    @apply w-full transition-all z-[2] relative duration-500 h-full 
+}
+
+.textContainer {
+    @apply flex flex-col gap-[1.3rem] items-start w-full md:w-[47%]
+}
+
+.title {
+    @apply uppercase font-medium text-2xl
+}

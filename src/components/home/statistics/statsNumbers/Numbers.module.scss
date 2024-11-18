@@ -1,0 +1,23 @@
+.container {
+  @apply w-full rounded-[2rem] flex flex-col md:flex-row gap-6 md:gap-2 justify-between relative z-[6];
+}
+
+.infoContainer {
+  @apply flex md:flex-col text-white gap-4;
+}
+
+.heading {
+  @apply text-base mr-auto md:mr-0 md:text-2xl font-semibold;
+}
+
+.buttonContainer {
+  @apply flex gap-3 items-center;
+}
+
+.button {
+  @apply p-2 px-6 transition-all duration-500 border border-[#ffe878] rounded-[0.8rem];
+}
+
+.clicked {
+  @apply bg-[#FFE878] text-black font-semibold;
+}

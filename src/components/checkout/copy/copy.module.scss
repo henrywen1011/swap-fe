@@ -1,0 +1,11 @@
+.copyContainer {
+    @apply relative inline-block;
+}
+
+.copyTooltip {
+    @apply absolute top-0 left-0 bg-gray-700 text-white text-xs rounded px-2 py-1;
+}
+
+.copyIcon {
+    @apply cursor-pointer;
+}

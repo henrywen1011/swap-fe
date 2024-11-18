@@ -1,0 +1,28 @@
+/* Caution2.module.css */
+.container {
+    @apply w-full flex flex-col gap-6 relative max-w-[80rem];
+}
+
+.sectionNumber {
+    @apply text-[5rem] font-semibold opacity-20 absolute top-[-7rem] left-0;
+}
+
+.sectionTitle {
+    @apply text-2xl font-medium uppercase;
+}
+
+.sectionContent {
+    @apply leading-[2rem] w-[90%];
+}
+
+.itemsContainer {
+    @apply flex w-full gap-2 md:gap-4;
+}
+
+.item {
+    @apply p-2 md:p-6 w-1/3 rounded-[1rem] bg-gradient-to-r from-[#eeba1d5f] to-[#ffe97846];
+}
+
+.itemTitle {
+    @apply font-medium md:text-xl text-center uppercase;
+}

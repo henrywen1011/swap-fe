@@ -1,0 +1,69 @@
+/* Hide scrollbars for Webkit browsers (Chrome, Safari) */
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbars for Firefox */
+.scrollContainer {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* recommendations.module.css */
+
+/* Root container */
+.container {
+  @apply w-full max-w-[80rem] lg:max-w-[90rem] p-4 flex flex-col mt-[2rem] gap-16 items-center relative;
+}
+
+/* Title style */
+.title {
+  @apply text-white font-semibold text-xl md:text-2xl;
+}
+
+/* Scroll container for recommendations */
+.scrollContainer {
+  @apply flex gap-4 w-full overflow-x-auto;
+}
+
+/* Recommendation card */
+.recommendationCard {
+  @apply flex flex-col gap-6 bg-gradient-to-tr min-w-[96%] md:min-w-[32%] md:max-w-[32%] from-[#eeb91d] to-[#ffe878] rounded-[1.5rem] p-6;
+}
+
+/* Chevron button */
+.chevronButton {
+  @apply rounded-full w-12 h-12 flex justify-center items-center cursor-pointer border border-[#FFE878];
+}
+
+/* Chevron image rotation for right chevron */
+.rotateChevron {
+  @apply transform rotate-180;
+}
+
+/* Name and role container */
+.nameRoleContainer {
+  @apply flex gap-2;
+}
+
+/* Name and role text */
+.nameRoleText {
+  @apply font-semibold flex flex-col;
+}
+
+/* Role text */
+.role {
+  @apply font-medium;
+}
+
+/* Comment text */
+.comment {
+  @apply leading-7;
+}
+
+/* Chevron button container */
+.chevronContainer {
+  @apply flex gap-8;
+}

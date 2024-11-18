@@ -1,0 +1,22 @@
+/* StarAnimation.module.css */
+
+.starContainer {
+    @apply absolute flex items-center;
+  }
+  
+  .starTail {
+    @apply bg-gradient-to-l from-yellow-400 to-transparent h-[1px] w-64 mr-1;
+  }
+  
+  .star {
+    @apply w-1 h-1 bg-yellow-400 rounded-full;
+  }
+  
+  .starGlow {
+    @apply shadow-[0_0_15px_5px_rgba(255,255,0,0.8)];
+  }
+  
+  .animationWrapper {
+    @apply relative z-50 top-0 w-full h-full overflow-hidden pointer-events-none;
+  }
+  

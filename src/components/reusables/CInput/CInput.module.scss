@@ -1,0 +1,128 @@
+@import "../../../styles/variables.scss";
+
+.custom_input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  &._fill {
+    width: 100%;
+  }
+
+  &._squard {
+    .input_container {
+      border-radius: 0;
+    }
+  }
+
+  &._border {
+    &._focus {
+      .input_container {
+        border: 1px solid $color-input-border !important;
+      }
+    }
+  }
+
+  &._pilled {
+    border-radius: 30px;
+    .input_container {
+      transition: all 0.2s ease;
+      border-radius: 30px !important;
+    }
+    &._focus {
+      .input_container {
+        border: 1px solid $color-input-border !important;
+      }
+    }
+  }
+
+  label {
+    margin-bottom: 8px;
+    color: #aaaaaa;
+    font-size: 12px;
+  }
+
+  .input_container {
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    padding: 0px 12px;
+    height: 42px;
+    gap: 12px;
+    font-size: 16px;
+    background-color: $color-input-bg;
+    border: 0px solid $color-input-border;
+
+    ._prefix {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding-right: 12px;
+      border-right: 1px solid $color-input-border;
+    }
+
+    ._suffix {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding-left: 12px;
+    }
+
+    &._error {
+      border: 1px solid rgba(240, 68, 56, 1) !important;
+      &._disabled {
+        border: none !important;
+      }
+    }
+
+    &._large {
+      height: 48px;
+      padding: 10px 20px;
+      border-radius: 12px;
+      input {
+        font-size: 16px;
+      }
+    }
+
+    &._big {
+      height: 40px;
+      border-radius: 8px;
+      padding: 8px 12px;
+
+      input {
+        font-size: 14px;
+      }
+    }
+
+    input {
+      font-family: $font-primary;
+      width: 100%;
+      padding: 8px 12px;
+      transition: all 0.2s ease;
+      border: none;
+      background-color: transparent;
+      color: #f9fafa;
+      font-size: 16px;
+      font-weight: 300;
+      padding: 0;
+
+      &.auto_size {
+        transition: all 0.2s ease, width 0s;
+      }
+
+      &:focus-visible {
+        border-color: green;
+        outline: none;
+      }
+
+      &:disabled {
+        color: #aaaaaa !important;
+      }
+    }
+
+    .prefix-text {
+      font-size: 14px;
+    }
+  }
+}

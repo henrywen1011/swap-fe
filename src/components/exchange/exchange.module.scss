@@ -1,0 +1,32 @@
+.container {
+    @apply w-full relative flex flex-col gap-[8rem] items-center p-2 mt-[10rem];
+  }
+  
+  .headingContainer {
+    @apply relative;
+  }
+  
+  .heading {
+    @apply text-center text-white font-semibold text-3xl mt-[7rem];
+  }
+  
+  .globe {
+    @apply absolute left-1/2 top-[-20vh] z-[-1] transform -translate-x-1/2;
+  }
+  
+  .instructionsContainer {
+    @apply relative mb-[-10rem] mt-[5rem] text-white;
+  }
+  
+  .tryHeading {
+    @apply text-center font-semibold text-2xl mt-[7rem];
+  }
+  
+  .tryText {
+    @apply text-base text-center;
+  }
+  
+  .swapFormContainer {
+    @apply w-screen relative text-white top-[-10rem] mb-[10rem] md:top-[-10rem] min-h-[50rem];
+  }
+  

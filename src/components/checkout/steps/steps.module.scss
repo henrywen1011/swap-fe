@@ -1,0 +1,18 @@
+/*steps */
+
+.stepContainer {
+    @apply relative flex flex-col items-center;
+}
+
+.pendingIcon {
+    @apply absolute top-[-1rem] sm:top-[-1rem] right-[-1rem] md:right-[-4rem] scale-[0.7] sm:scale-[0.9];
+}
+
+.nextStepIcon {
+    @apply absolute top-[-1rem] sm:top-[-1rem] right-[-1rem] md:right-[-4rem] scale-[0.7] sm:scale-[0.9];
+}
+
+.stepImage {
+    @apply scale-75 sm:scale-90;
+}
+
