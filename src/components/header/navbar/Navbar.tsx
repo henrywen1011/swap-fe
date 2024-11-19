@@ -1,10 +1,10 @@
 import { useState } from "react";
-import hydraLogo from "../../../assets/hydraLogo.svg";
-import search from "../../../assets/search.svg";
-import styles from "./navbar.module.scss"; // Import the CSS module
 import { useNavigate } from "react-router-dom";
+import hydraLogo from "@assets/hydraLogo.svg";
+import search from "@assets/search.svg";
+import styles from "./navbar.module.scss"; // Import the CSS module
 import CButton from "../../reusables/CButton";
-import { BUTTON_TYPES } from "../../../costants/types";
+import { BUTTON_TYPES } from "@constants/types";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,7 +36,7 @@ const Navbar = () => {
       {/* Desktop Navbar */}
       <div className={styles.navbarContainer}>
         <span>
-          <img onClick={()=> navigate('/')} src={hydraLogo} alt="hydra logo" />
+          <img onClick={() => navigate("/")} src={hydraLogo} alt="hydra logo" />
         </span>
         <span className={styles.tabs}>
           {tabs.map((tab, index) => (
@@ -60,7 +60,7 @@ const Navbar = () => {
       {/* Mobile Navbar */}
       <div className={styles.mobileNavbar}>
         <span>
-          <img onClick={()=> navigate('/')} src={hydraLogo} alt="hydra logo" />
+          <img onClick={() => navigate("/")} src={hydraLogo} alt="hydra logo" />
         </span>
         <CButton
           onClick={() => toggleMobileMenu()}
@@ -78,8 +78,9 @@ const Navbar = () => {
 
       {/* Mobile Menu - Sliding In/Out */}
       <div
-        className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.mobileMenuOpen : styles.mobileMenuClosed
-          } transition-transform  z-[800] duration-300 ease-in-out`}
+        className={`${styles.mobileMenu} ${
+          isMobileMenuOpen ? styles.mobileMenuOpen : styles.mobileMenuClosed
+        } transition-transform  z-[800] duration-300 ease-in-out`}
       >
         <div className="p-8 flex flex-col gap-6">
           {tabs.map((tab, index) => (

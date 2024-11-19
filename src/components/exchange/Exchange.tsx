@@ -1,10 +1,10 @@
 import Instructions from "./instructions/Instructions";
 import Globe from "../home/provisions/darkEarthSun/DarkEarthSun";
 import SwapForm from "../home/hero/swapform/SwapForm";
-import styles from './exchange.module.scss';
+import styles from "./exchange.module.scss";
 import GlowComponent from "../reusables/glowcomponents/GlowComponent";
 import BubbleComponent from "../reusables/backgroundbubbles/Bubble";
-import wavedots from "../../assets/wavedots.svg"
+import wavedots from "@assets/wavedots.svg";
 const Exchange = () => {
   return (
     <div className={styles.container}>
@@ -41,16 +41,24 @@ const Exchange = () => {
         </div>
       </>
       <>
-        <div className={`absolute top-[8%] scale-[65%] opacity-80  left-0 md:left-[-3%] lg:left-[2%]`}>
+        <div
+          className={`absolute top-[8%] scale-[65%] opacity-80  left-0 md:left-[-3%] lg:left-[2%]`}
+        >
           <img src={wavedots} alt="" />
         </div>
-        <div className={`absolute top-[36%] scale-[65%] opacity-80 right-0 md:right-[-3%] lg:right-[2%]`}>
+        <div
+          className={`absolute top-[36%] scale-[65%] opacity-80 right-0 md:right-[-3%] lg:right-[2%]`}
+        >
           <img src={wavedots} alt="" />
         </div>
-        <div className={`absolute top-[60%] scale-[65%] opacity-80  left-0 md:left-[-3%] lg:left-[2%]`}>
+        <div
+          className={`absolute top-[60%] scale-[65%] opacity-80  left-0 md:left-[-3%] lg:left-[2%]`}
+        >
           <img src={wavedots} alt="" />
         </div>
-        <div className={`absolute top-[86%] scale-[65%] opacity-80 right-0 md:right-[-3%] lg:right-[2%]`}>
+        <div
+          className={`absolute top-[86%] scale-[65%] opacity-80 right-0 md:right-[-3%] lg:right-[2%]`}
+        >
           <img src={wavedots} alt="" />
         </div>
       </>

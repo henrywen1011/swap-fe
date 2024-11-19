@@ -1,4 +1,4 @@
-@import "../../../styles/variables.scss";
+@use "../../../styles/variables.scss" as variables;
 
 .custom_input {
   position: relative;
@@ -19,7 +19,7 @@
   &._border {
     &._focus {
       .input_container {
-        border: 1px solid $color-input-border !important;
+        border: 1px solid variables.$border-color-input !important;
       }
     }
   }
@@ -32,7 +32,7 @@
     }
     &._focus {
       .input_container {
-        border: 1px solid $color-input-border !important;
+        border: 1px solid variables.$border-color-input !important;
       }
     }
   }
@@ -51,15 +51,15 @@
     height: 42px;
     gap: 12px;
     font-size: 16px;
-    background-color: $color-input-bg;
-    border: 0px solid $color-input-border;
+    background-color: variables.$background-input;
+    border: 0px solid variables.$border-color-input;
 
     ._prefix {
       display: flex;
       align-items: center;
       height: 100%;
       padding-right: 12px;
-      border-right: 1px solid $color-input-border;
+      border-right: 1px solid variables.$border-color-input;
     }
 
     ._suffix {
@@ -96,7 +96,7 @@
     }
 
     input {
-      font-family: $font-primary;
+      font-family: variables.$font-primary;
       width: 100%;
       padding: 8px 12px;
       transition: all 0.2s ease;

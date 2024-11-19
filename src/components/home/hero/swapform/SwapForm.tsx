@@ -1,14 +1,13 @@
 import React, { useRef, useState } from "react";
 import ToggleSwitch from "./Toggleswitch";
-import comingsoon from "../../../../assets/comingSoon.svg";
-import ethereum from "../../../../assets/ethereum.svg";
-import solana from "../../../../assets/solana.svg";
+import comingsoon from "@assets/comingSoon.svg";
+import ethereum from "@assets/ethereum.svg";
+import solana from "@assets/solana.svg";
 import { useNavigate } from "react-router-dom";
 import CoinModal from "../../CoinModal/CoinModal";
 import styles from "./SwapForm.module.scss";
-import Input from "../../../reusables/Input";
 import CButton from "../../../reusables/CButton";
-import { BUTTON_TYPES } from "../../../../costants/types";
+import { BUTTON_TYPES } from "@constants/types";
 import CInput from "../../../reusables/CInput";
 
 interface Exchange {
@@ -20,8 +19,8 @@ interface Exchange {
 
 const SwapForm: React.FC = () => {
   const [fromAmount, setFromAmount] = useState("");
-  const [toAmount, setToAmount] = useState('');
-  const [receivingWallet, setReveivingWallet] = useState('');
+  const [toAmount, setToAmount] = useState("");
+  const [receivingWallet, setReveivingWallet] = useState("");
   const [buttons, toggleButtons] = useState([
     { name: "SWAP", clicked: true },
     { name: "BUY", clicked: false },
@@ -51,9 +50,9 @@ const SwapForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     formData.current.timeCreated = new Date().toISOString();
-    formData.current.fromAmount = fromAmount,
-      formData.current.toAmount = toAmount,
-      formData.current.receivingWallet = receivingWallet,
+    (formData.current.fromAmount = fromAmount),
+      (formData.current.toAmount = toAmount),
+      (formData.current.receivingWallet = receivingWallet),
       localStorage.setItem("transaction", JSON.stringify(formData.current));
     localStorage.setItem("exchangeDetails", JSON.stringify(exchange));
     navigate("/checkout");
@@ -109,7 +108,7 @@ const SwapForm: React.FC = () => {
                 outline
                 bordered={false}
                 type={BUTTON_TYPES.PILLED}
-                buttonType='button'
+                buttonType="button"
               >
                 {button.name}
               </CButton>
@@ -118,7 +117,12 @@ const SwapForm: React.FC = () => {
         </div>
 
         <>
-          <div className={styles.gridContainer + ` ${displayedModal === 'swap' ? null : 'hidden'}`}>
+          <div
+            className={
+              styles.gridContainer +
+              ` ${displayedModal === "swap" ? null : "hidden"}`
+            }
+          >
             <div className={styles.inputWrapper}>
               <span>{exchange.sending.fullname}</span>
               <div className={styles.walletField}>
@@ -184,18 +188,19 @@ const SwapForm: React.FC = () => {
                   onClick={() => handleModal("receiving")}
                   className={styles.iconContainer}
                 >
-                  <img
-                    className="w-7"
-                    src={exchange.receiving.image}
-                    alt=""
-                  />
+                  <img className="w-7" src={exchange.receiving.image} alt="" />
                   {exchange.receiving.name}
                 </span>
               </div>
             </div>
           </div>
 
-          <div className={styles.inputWrapper + ` ${displayedModal === 'swap' ? null : 'hidden'}`}>
+          <div
+            className={
+              styles.inputWrapper +
+              ` ${displayedModal === "swap" ? null : "hidden"}`
+            }
+          >
             <h3>RECEIVING WALLET ADDRESS</h3>
             <div className={styles.walletField}>
               <CInput
@@ -212,8 +217,14 @@ const SwapForm: React.FC = () => {
             </div>
           </div>
 
-          <div className={styles.checkboxContainer + ` ${displayedModal === 'swap' ? null : 'hidden'}`}>
-            <Input type="checkbox" required={true} />
+          <div
+            className={
+              styles.checkboxContainer +
+              ` ${displayedModal === "swap" ? null : "hidden"}`
+            }
+          >
+            {/* <Input type="checkbox" required={true} /> */}
+            <CInput type="checkbox" />
             <span className={styles.termsText}>
               I have read and agreed to the Hydra{" "}
               <a className={styles.link} href="#">
@@ -225,13 +236,24 @@ const SwapForm: React.FC = () => {
               </a>
             </span>
           </div>
-
-          <CButton className={` ${displayedModal === 'swap' ? null : 'hidden'}`} bordered outline primary type={BUTTON_TYPES.PILLED} big>
+          <CButton primary>test</CButton>
+          <CButton
+            className={` ${displayedModal === "swap" ? null : "hidden"}`}
+            bordered
+            outline
+            primary
+            type={BUTTON_TYPES.PILLED}
+            big
+          >
             SWAP
           </CButton>
         </>
 
-        <img src={comingsoon} className={`${displayedModal === 'swap' ? 'hidden' : null}`} alt="Coming Soon" />
+        <img
+          src={comingsoon}
+          className={`${displayedModal === "swap" ? "hidden" : null}`}
+          alt="Coming Soon"
+        />
 
         <span className={styles.centerText}>
           First time on hydra?{" "}

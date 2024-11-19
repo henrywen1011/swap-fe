@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import Exchange from "../components/exchange/Exchange";
+import { useEffect } from "react";
 import { Element, scroller } from "react-scroll";
+import Exchange from "@components/exchange/Exchange";
 
 const ExchangePage = () => {
   const handleScroll = () => {

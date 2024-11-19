@@ -6,9 +6,9 @@ import React, {
   RefObject,
 } from "react";
 import classnames from "classnames";
-import { forceNumeric, format, isValidNumber } from "../../../utils/number";
+import { forceNumeric, format, isValidNumber } from "@utils/number";
 import styles from "./CInput.module.scss";
-import { NOOP } from "../../../costants/types";
+import { NOOP } from "@constants/types";
 
 const CInput: React.FC<{
   containerClassName?: string;

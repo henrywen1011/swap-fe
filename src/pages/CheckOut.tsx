@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import Checkout from "../components/checkout/Checkout";
+import { useEffect } from "react";
 import { Element, scroller } from "react-scroll";
+import Checkout from "@components/checkout/Checkout";
 
 const CheckOutPage = () => {
   const handleScroll = () => {

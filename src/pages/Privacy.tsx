@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import Privacy from "../components/privacy/Privacy";
+import { useEffect } from "react";
 import { Element, scroller } from "react-scroll";
+import Privacy from "@components/privacy/Privacy";
 
 const PrivacyPage = () => {
   const handleScroll = () => {

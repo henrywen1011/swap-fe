@@ -1,0 +1,106 @@
+@use "@styles/variables.scss" as variables;
+@use "@styles//mixin.scss" as func;
+
+.modal_overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  height: 100%;
+  background: variables.$background-modal;
+  pointer-events: none;
+}
+
+.modal_wrap {
+  background: variables.$background-modal;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: auto;
+  outline: 0;
+  text-align: center;
+  color: white;
+
+  &:before {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+    content: "";
+  }
+
+  .modal_body {
+    top: 0;
+    display: inline-block;
+    padding-block: 2rem;
+    text-align: start;
+    vertical-align: middle;
+
+    .modal_content {
+      position: relative;
+      width: 342px;
+      padding: 24px 0;
+
+      border-radius: 8px;
+      background: variables.$background-modal;
+      gap: 32px;
+
+      @include func.flex-center-column();
+      // border: 1px solid $border-color-input;
+      box-shadow: 0 28px 45px -1px #0000000d;
+
+      &.modal_sm {
+        width: 400px;
+      }
+
+      &.modal_bg {
+        width: 800px;
+      }
+
+      &.modal_lg {
+        width: 1000px;
+      }
+
+      .modal_title {
+        width: 80%;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 18px;
+        color: variables.$primary-color;
+      }
+
+      @media (max-width: 389px) {
+        width: 290px;
+        padding: 12px;
+      }
+
+      @media (min-width: 769px) {
+        width: 671px;
+        padding: 32px 0;
+      }
+
+      .close_icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border: unset;
+        cursor: pointer;
+        border-radius: 19px;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.7;
+        transition: all 0.2s ease-out;
+
+        .mybid-xl {
+          font-size: 37.5px;
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import * as THREE from 'three';
-import sun from "../../../../assets/sun.svg";
-import styles from './darkEarthSun.module.scss';
+import React, { useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import * as THREE from "three";
+import sun from "@assets/sun.svg";
+import styles from "./darkEarthSun.module.scss";
 
 // Breathing Sun Component
 const BreathingSun = () => {
@@ -18,8 +18,13 @@ const BreathingSun = () => {
   });
 
   return (
-    <sprite ref={sunRef} position={[0, 1, 0]}> {/* Adjusted position for visibility */}
-      <spriteMaterial attach="material" map={new THREE.TextureLoader().load(sun)} />
+    <sprite ref={sunRef} position={[0, 1, 0]}>
+      {" "}
+      {/* Adjusted position for visibility */}
+      <spriteMaterial
+        attach="material"
+        map={new THREE.TextureLoader().load(sun)}
+      />
     </sprite>
   );
 };
@@ -27,7 +32,9 @@ const BreathingSun = () => {
 // Earth Component (Black Sphere)
 const Earth = () => {
   return (
-    <mesh position={[0, 0.4, 0]}> {/* Positioned below the sun */}
+    <mesh position={[0, 0.4, 0]}>
+      {" "}
+      {/* Positioned below the sun */}
       <sphereGeometry args={[1.6, 40, 40]} /> {/* Adjust size of Earth */}
       <meshStandardMaterial color="black" />
     </mesh>
@@ -36,7 +43,7 @@ const Earth = () => {
 
 const Globe: React.FC = () => {
   return (
-    <div className={styles['globe-container']}>
+    <div className={styles["globe-container"]}>
       <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
         {/* Ambient light for general illumination */}
         <ambientLight intensity={0.4} />

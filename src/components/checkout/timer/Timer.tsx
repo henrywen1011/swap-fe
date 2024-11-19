@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import checked from "../../../assets/check.svg";
-import styles from './timer.module.scss'; // Import the CSS module
+import checked from "@assets/check.svg";
+import styles from "./timer.module.scss"; // Import the CSS module
 
 const Timer = () => {
   const stringedTransaction: any = localStorage.getItem("transaction");
@@ -40,8 +40,11 @@ const Timer = () => {
         <>
           <h2 className="text-center text-5xl font-semibold">CHECKOUT</h2>
           <span className="text-center md:text-xl">
-            <span className="text-[#eeb91d] md:text-xl">Deposit </span> the required funds{" "}
-            <span className="text-[#eeb91d] md:text-xl">to the Deposit-to wallet address</span>{" "}
+            <span className="text-[#eeb91d] md:text-xl">Deposit </span> the
+            required funds{" "}
+            <span className="text-[#eeb91d] md:text-xl">
+              to the Deposit-to wallet address
+            </span>{" "}
             in order to create a transaction.
           </span>
           <div className="flex gap-4 md:gap-8">
@@ -58,7 +61,9 @@ const Timer = () => {
       ) : (
         <div className={styles.transactionCompleteContainer}>
           <img src={checked} alt="Transaction Completed" />
-          <h3 className={styles.transactionCompleteText}>Your Transaction Has Been Completed</h3>
+          <h3 className={styles.transactionCompleteText}>
+            Your Transaction Has Been Completed
+          </h3>
         </div>
       )}
     </div>

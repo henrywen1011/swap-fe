@@ -2,11 +2,7 @@ import React, { forwardRef, memo, MouseEventHandler } from "react";
 import classnames from "classnames";
 import styled from "styled-components";
 import styles from "./CButton.module.scss";
-import {
-  ICButtonStyleProps,
-  BUTTON_TYPES,
-  NOOP,
-} from "../../../costants/types";
+import { ICButtonStyleProps, BUTTON_TYPES, NOOP } from "@constants/types";
 import ButtonLoading from "../ButtonLoading";
 
 const StyledButton = styled.button<ICButtonStyleProps>`
@@ -40,7 +36,7 @@ const CButton = forwardRef<
   HTMLButtonElement,
   {
     id?: string;
-    buttonType?: 'button' | 'submit' | 'reset';
+    buttonType?: "button" | "submit" | "reset";
     bordered?: boolean;
     children?: any;
     disabled?: boolean;
@@ -58,7 +54,7 @@ const CButton = forwardRef<
     active?: boolean;
     type?: string;
     outline?: boolean;
-    border?: boolean,
+    border?: boolean;
     filled?: boolean;
     icon?: boolean;
     loading?: boolean;
@@ -140,7 +136,7 @@ const CButton = forwardRef<
         ref={ref}
         disabled={disabled ?? false}
         type={buttonType}
-        style={{borderStyle: bordered? 'solid': 'none'}}
+        style={{ borderStyle: bordered ? "solid" : "none" }}
         className={classnames(styles.custom_button, className, {
           [styles._squared]: type === BUTTON_TYPES.SQUARED,
           [styles._pilled]: type === BUTTON_TYPES.PILLED,
