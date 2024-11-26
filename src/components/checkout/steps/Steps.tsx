@@ -18,7 +18,7 @@ const Steps = () => {
   const stringedTransaction: any = localStorage.getItem("transaction");
   const transaction = JSON.parse(stringedTransaction);
 
-  const transactionCreatedTime = new Date(transaction.timeCreated).getTime();
+  const transactionCreatedTime = 1110; //new Date(transaction.timeCreated).getTime();
   const [currentStep, setCurrentStep] = useState(0); // Starts at step 0 (deposit)
 
   useEffect(() => {

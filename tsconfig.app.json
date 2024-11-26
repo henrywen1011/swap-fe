@@ -21,6 +21,7 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "src",
     "paths": {
+      "@apis/*": ["apis/*"],
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
       "@constants/*": ["constants/*"],
@@ -31,5 +32,5 @@
       "@styles/*": ["styles/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "src/utils/wallet-address-validator.min.js"]
 }

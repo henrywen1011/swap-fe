@@ -1,11 +1,10 @@
-import BitWalletConnectModal from "./BitWalletConnectModal";
+import TokenSelectModal from "./TokenSelectModal";
 import useGlobalContext from "@hooks/useGlobalContext";
 
 const ModalsContainer = () => {
-  const { modals } = useGlobalContext();
   return (
     <>
-      <BitWalletConnectModal />
+      <TokenSelectModal />
     </>
   );
 };

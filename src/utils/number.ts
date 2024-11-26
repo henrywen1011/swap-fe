@@ -168,3 +168,10 @@ export const convertStringtoValidInteger = (value: string) => {
 
   return newValue;
 };
+
+export const isValidAmount = (amount: string) => {
+  if (!amount || amount === "" || parseFloat(amount) <= 0) {
+    return false;
+  }
+  return true;
+};

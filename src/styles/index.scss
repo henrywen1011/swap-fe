@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap');
-
+@use "@styles/variables.scss" as variables;
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,7 +9,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Sora", sans-serif;
-  font-size: 0.9rem;
   outline: none;
 }
 
@@ -22,15 +21,16 @@
   display: inline-block;
 }
 
-
 .cloud {
   position: absolute;
   width: 500px;
   height: 300px;
-  background: radial-gradient(circle at 50% 50%,
-      rgba(255, 0, 0, 0.8),
-      rgba(255, 0, 0, 0.5),
-      rgba(255, 0, 0, 0.3));
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 0, 0, 0.8),
+    rgba(255, 0, 0, 0.5),
+    rgba(255, 0, 0, 0.3)
+  );
   filter: blur(40px);
   border-radius: 50%;
   box-shadow: 0px 50px 100px rgba(255, 0, 0, 0.5),
@@ -46,4 +46,47 @@ input[type="number"]::-webkit-outer-spin-button {
 /* Hide the number input spinners in Firefox */
 input[type="number"] {
   -moz-appearance: textfield; /* For Firefox */
+}
+
+.Toastify__toast-theme--dark {
+  border-radius: 12px !important;
+}
+.Toastify__toast-theme--dark.Toastify__toast--success {
+  border: #00dbb6 1px solid !important;
+}
+.Toastify__toast-theme--dark.Toastify__toast--error {
+  border: #f04438 1px solid !important;
+}
+.Toastify__progress-bar--success {
+  height: 4px !important;
+}
+.Toastify__progress-bar--error {
+  height: 4px !important;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(128, 128, 128, 0.7);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: variables.$primary-color;
+  border-radius: 10px;
+}
+
+:root {
+  --rt-color-white: #fff;
+  --rt-color-dark: #222;
+  --rt-color-success: #8dc572;
+  --rt-color-error: #be6464;
+  --rt-color-warning: #f0ad4e;
+  --rt-color-info: #337ab7;
+  --rt-opacity: 0.9;
+  --rt-transition-show-delay: 0.15s;
+  --rt-transition-closing-delay: 0.15s;
 }

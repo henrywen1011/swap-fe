@@ -1,34 +1,35 @@
 import React, { forwardRef, memo, MouseEventHandler } from "react";
-import classnames from "classnames";
 import styled from "styled-components";
-import styles from "./CButton.module.scss";
-import { ICButtonStyleProps, BUTTON_TYPES, NOOP } from "@constants/types";
+import classnames from "classnames";
 import ButtonLoading from "../ButtonLoading";
+import { BUTTON_TYPES, NOOP } from "@constants/types";
+import { ICButtonStyleProps } from "@constants/interfeaces";
+import styles from "./index.module.scss";
 
 const StyledButton = styled.button<ICButtonStyleProps>`
-  font-size: ${(props) => props.dynamicStyle?.fontSize}px;
-  font-family: ${(props) => props.dynamicStyle?.fontFamily};
-  border-radius: ${(props) => props.dynamicStyle?.radius}px;
-  width: ${(props) => props.dynamicStyle?.width}px;
-  height: ${(props) => props.dynamicStyle?.height}px;
-  background-color: ${(props) => props.dynamicStyle?.backColor};
-  color: ${(props) => props.dynamicStyle?.color};
+  font-size: ${(props) => props.dynamicstyle?.fontSize}px;
+  font-family: ${(props) => props.dynamicstyle?.fontFamily};
+  border-radius: ${(props) => props.dynamicstyle?.radius}px;
+  width: ${(props) => props.dynamicstyle?.width}px;
+  height: ${(props) => props.dynamicstyle?.height}px;
+  background-color: ${(props) => props.dynamicstyle?.backColor};
+  color: ${(props) => props.dynamicstyle?.color};
   // border-style: solid;
-  // border-width: ${(props) => props.dynamicStyle?.borderWidth};
+  // border-width: ${(props) => props.dynamicstyle?.borderWidth};
   border-color: ${(props) =>
-    props?.dynamicStyle?.borderColor ?? props.dynamicStyle?.backColor};
-  padding: ${(props) => props.dynamicStyle?.padding};
+    props?.dynamicstyle?.borderColor ?? props.dynamicstyle?.backColor};
+  padding: ${(props) => props.dynamicstyle?.padding};
   &:hover {
     background-color: ${(props) =>
-      props.dynamicStyle?.hoverAction
-        ? props.dynamicStyle?.hoverBackColor
-        : props.dynamicStyle?.backColor};
+      props.dynamicstyle?.hoverAction
+        ? props.dynamicstyle?.hoverBackColor
+        : props.dynamicstyle?.backColor};
 
     color: ${(props) =>
-      props.dynamicStyle?.hoverAction
-        ? props.dynamicStyle?.hoverColor
-        : props.dynamicStyle?.color};
-    opacity: ${(props) => (props.dynamicStyle?.hoverAction ? 1 : 0.7)};
+      props.dynamicstyle?.hoverAction
+        ? props.dynamicstyle?.hoverColor
+        : props.dynamicstyle?.color};
+    opacity: ${(props) => (props.dynamicstyle?.hoverAction ? 1 : 0.7)};
   }
 `;
 
@@ -48,6 +49,7 @@ const CButton = forwardRef<
     gradient?: boolean;
     warn?: boolean;
     info?: boolean;
+    large?: boolean;
     small?: boolean;
     big?: boolean;
     tiny?: boolean;
@@ -91,6 +93,7 @@ const CButton = forwardRef<
       info = false,
       warn = false,
       small = false,
+      large = false,
       big = false,
       tiny = false,
       active = false,
@@ -119,7 +122,7 @@ const CButton = forwardRef<
           _big: big,
         })}
         onClick={onClick}
-        dynamicStyle={dynamicStyle}
+        dynamicstyle={dynamicStyle}
       >
         {loading ? (
           <ButtonLoading
@@ -151,6 +154,7 @@ const CButton = forwardRef<
           [styles._active]: active,
           [styles._small]: small,
           [styles._big]: big,
+          [styles._large]: large,
           [styles._icon]: icon,
           [styles._tiny]: tiny,
         })}

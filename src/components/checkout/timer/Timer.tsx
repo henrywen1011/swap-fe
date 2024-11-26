@@ -3,11 +3,8 @@ import checked from "@assets/check.svg";
 import styles from "./timer.module.scss"; // Import the CSS module
 
 const Timer = () => {
-  const stringedTransaction: any = localStorage.getItem("transaction");
-  const transaction = JSON.parse(stringedTransaction);
-
   // Assuming transaction.timeCreated is in ISO string format
-  const transactionCreatedTime = new Date(transaction.timeCreated).getTime(); // Get timestamp in milliseconds
+  const transactionCreatedTime = 1000; //new Date(transaction.timeCreated).getTime(); // Get timestamp in milliseconds
   const deadline = transactionCreatedTime + 30 * 60 * 1000; // Add 30 minutes (in milliseconds)
 
   const [timeLeft, setTimeLeft] = useState(Math.max(deadline - Date.now(), 0)); // Calculate initial time left
@@ -36,7 +33,7 @@ const Timer = () => {
 
   return (
     <div className={styles.timerContainer}>
-      {timeLeft > tenMinutesInMillis ? (
+      {true ? (
         <>
           <h2 className="text-center text-5xl font-semibold">CHECKOUT</h2>
           <span className="text-center md:text-xl">

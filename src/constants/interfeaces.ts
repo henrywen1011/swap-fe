@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
-import { ModalSizeType } from "./types";
+import { ModalSizeType, TokenDirectionType } from "./types";
 
 export interface ICButtonStyleProps {
-  dynamicStyle: {
+  dynamicstyle: {
     hoverBackColor?: string;
     hoverAction?: boolean;
     radius?: string;
@@ -70,4 +70,61 @@ export interface ISVGIconProps extends React.HTMLAttributes<HTMLDivElement> {
   color?: string;
   fillColor?: string;
   size?: number;
+}
+
+export interface IToken {
+  id: string;
+  name: string;
+  logo: string;
+  display_name: string;
+  color: string;
+  keyword: string;
+  network?: INetwork;
+  category_id: Array<string>;
+  network_id: string;
+  network_name: string;
+  network_logo: string;
+}
+
+export interface INetwork {
+  id: string;
+  logo: string;
+  name: string;
+}
+
+export interface ICategory {
+  id: string;
+  name: string;
+}
+
+export interface ITokenModalParams {
+  type: TokenDirectionType;
+  tokens: IToken[];
+  networks: INetwork[];
+  categories: ICategory[];
+  selToken?: IToken;
+  selNetwork?: INetwork;
+}
+
+export interface IOrderDetail {
+  orderId: string;
+  creation_time: number;
+  deposit_tx_hash?: string;
+  receive_tx_hash?: string;
+  first_tx_receive_time: 0;
+  from_amount: string;
+  from_network: {
+    logo: string;
+    name: string;
+  };
+  from_symbol: string;
+  to_amount: string;
+  to_address: string;
+  to_symbol: string;
+  to_network: {
+    logo: string;
+    name: string;
+  };
+  paying_address: string;
+  status: number;
 }

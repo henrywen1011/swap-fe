@@ -5,12 +5,13 @@ import RightDirectionIcon from "./icons/RightDirectionIcon";
 import LogoutIcon from "./icons/LogoutIcon";
 import { ISVGIconProps } from "@constants/interfeaces";
 import { ICON_NAMES, ICON_SIZE } from "@constants/config";
+import SearchIcon from "./icons/SearchIcon";
 
 const SVGIcon: React.FC<ISVGIconProps> = ({
   name,
   active = false,
   black = false,
-  color = "#AAAAAA",
+  color = "#ffe878",
   size = ICON_SIZE.DEFAULT,
 }) => {
   const getIcon = () => {
@@ -18,6 +19,10 @@ const SVGIcon: React.FC<ISVGIconProps> = ({
       case ICON_NAMES.CLOSE:
         return (
           <CloseIcon active={active} black={black} color={color} size={size} />
+        );
+      case ICON_NAMES.SEARCH:
+        return (
+          <SearchIcon active={active} black={black} color={color} size={size} />
         );
       case ICON_NAMES.RIGHT_ARROW:
         return (

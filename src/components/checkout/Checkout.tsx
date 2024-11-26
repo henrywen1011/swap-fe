@@ -10,7 +10,11 @@ const Checkout = () => {
     <div className={styles.container}>
       <div
         className={styles.background}
-        style={{ background: `url(${formBg})`, backgroundSize: "cover" }}
+        style={{
+          background: `url(${formBg})`,
+          height: "50%",
+          backgroundSize: "cover",
+        }}
       >
         <div className={styles.fullScreen}>
           <StarAnimation />

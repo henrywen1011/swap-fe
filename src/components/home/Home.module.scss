@@ -1,11 +1,11 @@
 .homeContainer {
-    @apply mt-[6rem] w-full flex flex-col overflow-hidden items-center md:px-[5rem] gap-10 relative
+  @apply mt-[4rem] w-full flex flex-col overflow-hidden items-center md:px-[5rem] gap-10 relative;
 }
 
 .relativeContainer {
-    @apply relative w-full flex justify-center mt-[10rem]
+  @apply relative w-full flex justify-center mt-[10rem];
 }
 
 .globeContainer {
-    @apply absolute left-1/2 top-[-20vh] z-[-1] transform -translate-x-1/2
+  @apply absolute left-1/2 top-[-20vh] z-[-1] transform -translate-x-1/2;
 }

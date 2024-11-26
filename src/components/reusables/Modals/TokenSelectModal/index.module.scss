@@ -1,0 +1,77 @@
+@use "@styles/variables.scss" as variables;
+
+.token_select_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 50px;
+  padding: 0 20px;
+
+  .networks_section {
+    // @apply flex flex-col items-center;
+
+    // .neworks_row{
+    //   @apply flex justify-center
+    // }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    justify-content: center;
+    /* Adjust the number of columns based on the screen width */
+    // grid-template-columns: repeat(auto-fit, minmax(26px, 1fr));
+
+    img {
+      width: 26px;
+      border-radius: 13px;
+      height: auto;
+      display: block;
+      background-color: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7);
+      }
+
+      &.selected {
+        border: 3px solid variables.$primary-color;
+      }
+    }
+  }
+
+  .tokens_section {
+    @apply flex w-full h-[35vh];
+
+    .tokens_list {
+      @apply w-full flex flex-col gap-2 overflow-y-auto py-3 px-2;
+
+      .token_item {
+        @apply flex flex-row justify-between p-[12px] cursor-pointer;
+        background-color: variables.$background-input;
+        transition: all 0.1s ease;
+
+        &:hover {
+          //background-color: variables.$background-modal;
+          opacity: 0.6;
+        }
+
+        .token_left {
+          @apply flex items-center gap-4;
+          span {
+            font-size: 20px;
+          }
+
+          img {
+            @apply w-[42px];
+          }
+        }
+
+        .token_right {
+          @apply flex items-center;
+          // color: variables.$primary-color;
+        }
+      }
+    }
+  }
+}

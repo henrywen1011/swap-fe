@@ -38,6 +38,15 @@
     }
   }
 
+  &._large {
+    @apply h-[50px] sm:h-[60px];
+    font-size: 16px;
+
+    &._rounded {
+      border-radius: 18px;
+    }
+  }
+
   &._tiny {
     height: 32px;
     padding: 0 8px;
@@ -143,10 +152,14 @@
 
     &._active {
       color: #f9fafa;
-      background-color: rgba(217, 230, 255, 0.2);
+      background-color: variables.$primary-color;
     }
   }
 
+  &._active {
+    color: #f9fafa;
+    background-color: variables.$primary-color;
+  }
   &._outline {
     color: white;
     border-width: 1px !important;
@@ -169,8 +182,8 @@
       background-color: rgba(217, 230, 255, 0.1);
     }
 
-    &.active {
-      background-color: rgba(217, 230, 255, 0.1);
+    &._active {
+      background-color: variables.$primary-color;
     }
   }
 

@@ -39,7 +39,11 @@ const CModal: FC<IModalProps> = ({
           const clickedElement = event.target as HTMLElement;
           if (clickedElement.className === styles.modal_wrap) {
             closeAllModal();
-          } else event.preventDefault();
+          } else if (
+            clickedElement.nodeName !== "INPUT" &&
+            clickedElement.nodeName !== "TEXTAREA"
+          )
+            event.preventDefault();
         });
       }
     }
@@ -60,7 +64,9 @@ const CModal: FC<IModalProps> = ({
           >
             <div className={styles.modal_body}>
               <div className={classNames(styles.modal_content, styles[size])}>
-                <div className={styles.modal_title}>{title}</div>
+                {title !== undefined && (
+                  <div className={styles.modal_title}>{title}</div>
+                )}
                 {children}
                 {closable && (
                   <button

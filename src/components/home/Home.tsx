@@ -1,12 +1,12 @@
-import Provision from "./provisions/Provision"
-import Recommendations from "./recommendations/Recommendations"
-import Stats from "./statistics/Statistics"
-import Hero from "./hero/Hero"
-import Globe from "./provisions/darkEarthSun/DarkEarthSun"
-import GlowComponent from "../reusables/glowcomponents/GlowComponent"
-import BubbleComponent from "../reusables/backgroundbubbles/Bubble"
-import wavedots from "../../assets/wavedots.svg"
-import styles from "./Home.module.scss"
+import Provision from "./provisions/Provision";
+import Recommendations from "./recommendations/Recommendations";
+import Stats from "./statistics/Statistics";
+import Hero from "./hero/Hero";
+import Globe from "./provisions/darkEarthSun/DarkEarthSun";
+import GlowComponent from "../reusables/glowcomponents/GlowComponent";
+import BubbleComponent from "../reusables/backgroundbubbles/Bubble";
+import wavedots from "../../assets/wavedots.svg";
+import styles from "./Home.module.scss";
 
 const Home = () => {
   return (
@@ -44,16 +44,24 @@ const Home = () => {
         </div>
       </>
       <>
-        <div className={`absolute top-[8%] scale-[65%] opacity-80  left-0 md:left-[-3%] lg:left-[2%]`}>
+        <div
+          className={`absolute top-[8%] scale-[65%] opacity-80  left-0 md:left-[-3%] lg:left-[2%]`}
+        >
           <img src={wavedots} alt="" />
         </div>
-        <div className={`absolute top-[36%] scale-[65%] opacity-80 right-0 md:right-[-3%] lg:right-[2%]`}>
+        <div
+          className={`absolute top-[36%] scale-[65%] opacity-80 right-0 md:right-[-3%] lg:right-[2%]`}
+        >
           <img src={wavedots} alt="" />
         </div>
-        <div className={`absolute top-[60%] scale-[65%] opacity-80  left-0 md:left-[-3%] lg:left-[2%]`}>
+        <div
+          className={`absolute top-[60%] scale-[65%] opacity-80  left-0 md:left-[-3%] lg:left-[2%]`}
+        >
           <img src={wavedots} alt="" />
         </div>
-        <div className={`absolute top-[86%] scale-[65%] opacity-80 right-0 md:right-[-3%] lg:right-[2%]`}>
+        <div
+          className={`absolute top-[86%] scale-[65%] opacity-80 right-0 md:right-[-3%] lg:right-[2%]`}
+        >
           <img src={wavedots} alt="" />
         </div>
       </>
@@ -99,7 +107,7 @@ const Home = () => {
       </div>
       <Recommendations />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -8,6 +8,7 @@
   height: 100%;
   background: variables.$background-modal;
   pointer-events: none;
+  @apply backdrop-blur;
 }
 
 .modal_wrap {
@@ -41,7 +42,9 @@
       padding: 24px 0;
 
       border-radius: 8px;
-      background: variables.$background-modal;
+      background: variables.$primary-modal;
+      @apply backdrop-blur-lg;
+
       gap: 32px;
 
       @include func.flex-center-column();
@@ -92,7 +95,7 @@
         justify-content: center;
         align-items: center;
         opacity: 0.7;
-        transition: all 0.2s ease-out;
+        transition: all 0.2s ease-in-out;
 
         .mybid-xl {
           font-size: 37.5px;

@@ -4,16 +4,53 @@ import pocketCoin from "@assets/pocketCoin.svg";
 import Copy from "../copy/Copy";
 import QRCode from "react-qr-code";
 import styles from "./paymentdetails.module.scss"; // Import the CSS module
+import ethereum from "@assets/ethereum.svg";
+import solana from "@assets/solana.svg";
+import { useCheckoutContext } from "@contexts/CheckoutContext";
 
 const PaymentDetails = () => {
+  const { orderDetail } = useCheckoutContext();
   const stringedTransaction: any = localStorage.getItem("transaction");
-  const transaction = JSON.parse(stringedTransaction);
+  // const transaction = JSON.parse(stringedTransaction);
+  const transaction = {
+    sending: {
+      name: "ETH",
+      image: ethereum,
+      conversion: "",
+      fullname: "ETHEREUM",
+    },
+    receiving: {
+      name: "SOL",
+      image: solana,
+      conversion: "",
+      fullname: "SOLANA",
+    },
+    fromAmount: "100",
+    toAmount: "1",
+    receivingWallet: "XXXXXXXXXXXXXXXXXXX",
+  };
   const [generatedPayment] = useState({
     to: "0xb69b4b4a6a5a01e970c04cd8306a25e85cce71f8",
   });
 
   const exchangeDetails: any = localStorage.getItem("exchangeDetails");
-  const exchange = JSON.parse(exchangeDetails);
+  const exchange = {
+    sending: {
+      name: "ETH",
+      image: ethereum,
+      conversion: "",
+      fullname: "ETHEREUM",
+    },
+    receiving: {
+      name: "SOL",
+      image: solana,
+      conversion: "",
+      fullname: "SOLANA",
+    },
+    fromAmount: "100",
+    toAmount: "1",
+    receivingWallet: "XXXXXXXXXXXXXXXXXXX",
+  };
 
   return (
     <div className={styles.container}>
@@ -117,7 +154,7 @@ const PaymentDetails = () => {
         <div className={styles.timeSection}>
           <p>Creation Time</p>
           <p className={styles.highlightedText}>
-            {new Date(transaction?.timeCreated).toLocaleString()}
+            {/* {new Date(transaction?.timeCreated).toLocaleString()} */}
           </p>
         </div>
       </div>

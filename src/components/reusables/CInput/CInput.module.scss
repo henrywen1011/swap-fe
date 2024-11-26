@@ -25,10 +25,10 @@
   }
 
   &._pilled {
-    border-radius: 30px;
+    border-radius: 50px;
     .input_container {
       transition: all 0.2s ease;
-      border-radius: 30px !important;
+      border-radius: 50px !important;
     }
     &._focus {
       .input_container {
@@ -46,7 +46,8 @@
   .input_container {
     display: flex;
     align-items: center;
-    border-radius: 4px;
+    justify-content: space-between;
+    border-radius: 12px;
     padding: 0px 12px;
     height: 42px;
     gap: 12px;
@@ -59,7 +60,7 @@
       align-items: center;
       height: 100%;
       padding-right: 12px;
-      border-right: 1px solid variables.$border-color-input;
+      //border-right: 1px solid variables.$border-color-input;
     }
 
     ._suffix {
@@ -77,35 +78,33 @@
     }
 
     &._large {
-      height: 48px;
+      @apply h-[70px] md:h-[80px] rounded-[22px] md:rounded-[30px];
       padding: 10px 20px;
-      border-radius: 12px;
+
       input {
-        font-size: 16px;
+        @apply text-[18px] md:text-[24px];
       }
     }
 
     &._big {
-      height: 40px;
-      border-radius: 8px;
+      @apply h-[60px] md:h-[70px] rounded-[16px] md:rounded-[20px];
       padding: 8px 12px;
 
       input {
-        font-size: 14px;
+        @apply text-[14px] md:text-[18px];
       }
     }
 
     input {
       font-family: variables.$font-primary;
-      width: 100%;
       padding: 8px 12px;
       transition: all 0.2s ease;
       border: none;
       background-color: transparent;
       color: #f9fafa;
       font-size: 16px;
-      font-weight: 300;
-      padding: 0;
+      font-weight: 500;
+      flex: 1;
 
       &.auto_size {
         transition: all 0.2s ease, width 0s;
@@ -117,7 +116,7 @@
       }
 
       &:disabled {
-        color: #aaaaaa !important;
+        // color: #aaaaaa !important;
       }
     }
 

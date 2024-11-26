@@ -9,6 +9,7 @@ import classnames from "classnames";
 import { forceNumeric, format, isValidNumber } from "@utils/number";
 import styles from "./CInput.module.scss";
 import { NOOP } from "@constants/types";
+import Placeholder from "../Placeholder";
 
 const CInput: React.FC<{
   containerClassName?: string;
@@ -37,6 +38,7 @@ const CInput: React.FC<{
   placeholder?: string;
   type?: string;
   maxLength?: number;
+  loading?: boolean;
   customRef?: RefObject<HTMLInputElement>;
   children?: React.ReactNode;
   onChange?: (value: string, e?: any) => void;
@@ -72,6 +74,7 @@ const CInput: React.FC<{
   customRef,
   children = null,
   maxLength,
+  loading,
   onChange = NOOP,
   onBlur = NOOP,
   onFocus = NOOP,
@@ -94,7 +97,6 @@ const CInput: React.FC<{
   const handleOnChange = (e: any) => {
     if (onlyNumbers || onlyInteger) {
       const numberText = forceNumeric(e.target.value);
-      console.log("=======>", e.target.value, numberText);
 
       if (isValidNumber(numberText, precision + 1, onlyInteger)) {
         const input = e.target;
@@ -168,27 +170,32 @@ const CInput: React.FC<{
         )}
 
         {prefix && <div className={styles._prefix}>{prefix}</div>}
-
-        <input
-          ref={customRef}
-          type={type}
-          id={id}
-          required={required}
-          className={classnames(className, {
-            [styles.auto_size]: autoSize,
-            ["text-center"]: textCenter,
-          })}
-          style={{ width: inputWidth && autoSize ? inputWidth : "" }}
-          value={value}
-          disabled={disabled}
-          maxLength={maxLength}
-          onChange={handleOnChange}
-          onBlur={handleOnBlur}
-          onFocus={handleFocus}
-          onKeyDown={handleKeyDown}
-          autoComplete={autoComplete}
-          {...rest}
-        />
+        {loading ? (
+          <div className="ml-2">
+            <Placeholder />
+          </div>
+        ) : (
+          <input
+            ref={customRef}
+            type={type}
+            id={id}
+            required={required}
+            className={classnames(className, {
+              [styles.auto_size]: autoSize,
+              ["text-center"]: textCenter,
+            })}
+            style={{ width: inputWidth && autoSize ? inputWidth : "" }}
+            value={value}
+            disabled={disabled}
+            maxLength={maxLength}
+            onChange={handleOnChange}
+            onBlur={handleOnBlur}
+            onFocus={handleFocus}
+            onKeyDown={handleKeyDown}
+            autoComplete={autoComplete}
+            {...rest}
+          />
+        )}
 
         {suffix && <div className={styles._suffix}>{suffix}</div>}
       </div>

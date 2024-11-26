@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Element, scroller } from "react-scroll";
 import Checkout from "@components/checkout/Checkout";
 
-const CheckOutPage = () => {
+const CheckoutPage = () => {
   const handleScroll = () => {
     scroller.scrollTo("top", { smooth: true });
   };
@@ -18,4 +18,4 @@ const CheckOutPage = () => {
   );
 };
 
-export default CheckOutPage;
+export default CheckoutPage;

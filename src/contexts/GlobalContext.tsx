@@ -7,7 +7,7 @@ interface GlobalContextProps {
   isPageLoading: boolean;
   modals: IModalsState;
   setModals: (val: IModalsState) => void;
-  closeModal: (val: any) => void;
+  closeModal: (val: any, params?: any) => void;
   closeAllModal: () => void;
   setIsLoading: (val: boolean) => void;
   setIsPageLoading: (val: boolean) => void;
@@ -47,8 +47,16 @@ export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
     setModals(tp);
   };
 
-  const closeModal = (modalId: string) => {
-    setModals({ ...modals, [modalId]: { opened: false } });
+  const changeModalStatus = (modalId: string, params?: any) => {
+    const tp = { ...modals, [modalId]: { ...modals[modalId], params } };
+    setModals(tp);
+  };
+
+  const closeModal = (modalId: string, newParam?: any) => {
+    setModals({
+      ...modals,
+      [modalId]: { opened: false, params: newParam ?? modals[modalId].params },
+    });
   };
 
   const closeAllModal = () => {

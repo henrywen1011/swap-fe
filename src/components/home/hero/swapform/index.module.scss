@@ -1,0 +1,100 @@
+.swapForm {
+  @apply relative flex flex-col gap-8;
+  @apply w-full relative max-w-[50rem] bottom-[-35%] z-[2] transform -translate-y-[-180px] bg-white p-4 py-6 md:p-6 md:left-1/2 md:-translate-x-1/2 bg-[#FFFFFF14] rounded-[2rem];
+  @apply backdrop-blur-md;
+}
+
+.swapFormHidden {
+  @apply hidden;
+}
+
+.toggleHeader {
+  @apply flex justify-center items-center block sm:hidden;
+}
+
+.headerText {
+  @apply text-white font-medium;
+}
+
+.toggleSwitchContainer {
+  @apply flex  p-2 gap-2 px-4 rounded-full border border-[#FFE878];
+}
+
+.buttonContainer {
+  @apply p-2 md:px-4 bg-[#0C0C0C59] rounded-full flex gap-2 md:gap-4 items-center justify-center;
+}
+
+.button {
+  @apply p-2 md:p-3 px-8 md:px-12 transition-all duration-500 rounded-[2rem];
+}
+
+.activeButton {
+  @apply bg-[#FFE878] text-black font-semibold;
+}
+
+.gridContainer {
+  @apply flex flex-col gap-10;
+
+  .swap_button {
+    &:disabled {
+      opacity: 1 !important;
+    }
+  }
+}
+
+.inputWrapper {
+  @apply flex flex-col w-full gap-4 items-start;
+}
+
+.inputLabel {
+  @apply flex justify-between items-center w-full;
+
+  span {
+    @apply text-base md:text-lg;
+  }
+  .toggleHeader {
+    @apply hidden md:block;
+  }
+}
+
+.inputField {
+  @apply bg-[#0B0B0B5C] focus:outline-none p-4 px-6 w-full rounded-full;
+}
+
+.networkLabel {
+  @apply flex items-center gap-3;
+  img {
+    @apply w-[26px] md:w-[32px];
+  }
+}
+
+.iconContainer {
+  @apply flex gap-2 md:gap-4 items-center cursor-pointer text-xl md:text-3xl;
+  img {
+    @apply w-[26px] md:w-[35px];
+  }
+}
+
+.walletField {
+  @apply relative w-full;
+}
+
+.checkboxContainer {
+  @apply w-full flex items-center justify-center gap-2;
+}
+
+.submitButton {
+  @apply border hover:bg-[#FFE878] hover:text-black hover:font-semibold transition-all duration-500 border-[#EEB91D] rounded-full p-4;
+}
+
+.termsText {
+  @apply capitalize;
+}
+
+.link {
+  @apply text-[#3CFF00];
+}
+
+.centerText {
+  @apply text-center;
+}

@@ -1,24 +1,23 @@
 .timerContainer {
-    @apply w-full rounded-[2rem] flex flex-col gap-[3rem] items-center justify-center text-white p-4 md:p-[3rem] bg-[#ffffff0e] h-full relative z-[5];
-  }
-  
-  .timerDigits {
-    @apply bg-[#ffffff42] min-w-[10rem] min-h-[10rem] md:min-w-[18rem] md:min-h-[18rem] flex items-center justify-center text-center p-2 md:p-6 rounded-[2rem] text-4xl md:text-[10rem];
-  }
-  
-  .timeSeparator {
-    @apply text-4xl flex items-center justify-center md:text-[10rem];
-  }
-  
-  .timeLeftLabel {
-    @apply uppercase text-xl mt-[2rem];
-  }
-  
-  .transactionCompleteContainer {
-    @apply w-full justify-center gap-[2rem] items-center flex flex-col p-4 md:p-10;
-  }
-  
-  .transactionCompleteText {
-    @apply md:text-4xl;
-  }
-  
+  @apply w-full rounded-[2rem] flex flex-col gap-[3rem] items-center justify-center text-white p-4 md:p-[3rem] bg-[#ffffff0e] h-full relative z-[5];
+}
+
+.timerDigits {
+  @apply bg-[#ffffff42] w-[5rem] h-[5rem] md:w-[7rem] md:h-[7rem] flex items-center justify-center text-center p-2 md:p-6 rounded-[2rem] text-4xl md:text-[3rem];
+}
+
+.timeSeparator {
+  @apply text-4xl flex items-center justify-center md:text-[6rem];
+}
+
+.timeLeftLabel {
+  @apply uppercase text-xl mt-[2rem];
+}
+
+.transactionCompleteContainer {
+  @apply w-full justify-center gap-[2rem] items-center flex flex-col p-4 md:p-10;
+}
+
+.transactionCompleteText {
+  @apply md:text-4xl;
+}
