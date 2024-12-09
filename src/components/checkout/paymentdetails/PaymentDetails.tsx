@@ -1,19 +1,18 @@
-import { useRef, useState } from "react";
-import arrow from "@assets/arrow.svg";
-import pocketCoin from "@assets/pocketCoin.svg";
+import { useEffect, useRef, useState } from "react";
 import Copy from "../copy/Copy";
 import QRCode from "react-qr-code";
 import styles from "./paymentdetails.module.scss"; // Import the CSS module
-import ethereum from "@assets/ethereum.svg";
-import solana from "@assets/solana.svg";
 import { useCheckoutContext } from "@contexts/CheckoutContext";
 import Steps from "../steps/Steps";
 
 const PaymentDetails = () => {
   const { orderDetail } = useCheckoutContext();
-  const stringedTransaction: any = localStorage.getItem("transaction");
   const timerRef = useRef<any>(null);
   const [remainingTs, setRemainingTs] = useState(0);
+
+  useEffect(() => {
+    if (orderDetail) runTimer();
+  }, [orderDetail]);
 
   const runTimer = () => {
     if (timerRef.current) {
@@ -38,48 +37,6 @@ const PaymentDetails = () => {
     }
   };
 
-  // const transaction = JSON.parse(stringedTransaction);
-  const transaction = {
-    sending: {
-      name: "ETH",
-      image: ethereum,
-      conversion: "",
-      fullname: "ETHEREUM",
-    },
-    receiving: {
-      name: "SOL",
-      image: solana,
-      conversion: "",
-      fullname: "SOLANA",
-    },
-    fromAmount: "100",
-    toAmount: "1",
-    receivingWallet: "XXXXXXXXXXXXXXXXXXX",
-  };
-
-  const [generatedPayment] = useState({
-    to: "0xb69b4b4a6a5a01e970c04cd8306a25e85cce71f8",
-  });
-
-  const exchangeDetails: any = localStorage.getItem("exchangeDetails");
-  const exchange = {
-    sending: {
-      name: "ETH",
-      image: ethereum,
-      conversion: "",
-      fullname: "ETHEREUM",
-    },
-    receiving: {
-      name: "SOL",
-      image: solana,
-      conversion: "",
-      fullname: "SOLANA",
-    },
-    fromAmount: "100",
-    toAmount: "1",
-    receivingWallet: "XXXXXXXXXXXXXXXXXXX",
-  };
-
   return (
     <div className={styles.container}>
       <h2 className="text-center text-2xl md:text-5xl font-semibold mt-10">
@@ -101,7 +58,9 @@ const PaymentDetails = () => {
           <div className={styles.card}>
             <div className="bg-[#ffe878] text-[#000] py-3 px-5 mb-10 text-[22px] rounded-[10px]">
               Time left to send deposit:{" "}
-              <span className="text-[#068106] font-bold">{`${(remainingTs / 60)
+              <span className="text-[#068106] font-bold w-[100px]">{`${Math.floor(
+                remainingTs / 60
+              )
                 .toString()
                 .padStart(2, "0")}:${(remainingTs % 60)
                 .toString()

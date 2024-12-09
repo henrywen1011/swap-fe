@@ -43,8 +43,8 @@ const Steps = () => {
     <div className="grid grid-cols-2 md:flex w-full max-w-[70rem] lg:max-w-[80rem] px-2 md:justify-between gap-4 md:gap-0">
       {stepsArr.map((step, index) =>
         index === orderDetail?.status ? (
-          <div>
-            <BlinkAnimation delay={0.5} key={index}>
+          <div key={index}>
+            <BlinkAnimation delay={0.5}>
               <ProgressStep step={step} id={index} />
             </BlinkAnimation>
           </div>
