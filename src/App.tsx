@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom";
-import Header from "@components/header/Header";
-import BlinkingStars from "@components/reusables/StarsBg";
 import HomePage from "@pages/HomePage";
+import PrivacyPage from "@pages/Privacy";
 import CheckOutPage from "@pages/CheckoutPage";
 import ExchangePage from "@pages/ExchangePage";
-import PrivacyPage from "@pages/Privacy";
 import SwapProvider from "@contexts/SwapContext";
-import PageLoader from "@components/reusables/PageLoader";
 import CheckoutProvider from "@contexts/CheckoutContext";
+import Header from "@components/header/Header";
+import BlinkingStars from "@components/reusables/StarsBg";
+import PageLoader from "@components/reusables/PageLoader";
 
 function App() {
   return (
@@ -27,7 +27,6 @@ function App() {
             path="checkout/:order_id"
             element={
               <CheckoutProvider>
-                {" "}
                 <CheckOutPage />
               </CheckoutProvider>
             }

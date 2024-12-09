@@ -13,6 +13,10 @@ export const ICON_NAMES = {
   LOGOUT: "logout-icon",
   RIGHT_ARROW: "right-arrow-icon",
   CLOSE_OUTLINE_CIRCLE: "close-outline-circle-icon",
+  SAND_CLOCK: "sand-clock-icon",
+  ANNONYMOUS: "annonymjo-icon",
+  EXCHANGE: "exchange-icon",
+  COMPLETE: "complete-icon",
 };
 
 export const ICON_SIZE = {

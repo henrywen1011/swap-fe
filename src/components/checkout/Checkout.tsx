@@ -3,12 +3,11 @@ import formBg from "@assets/formBg.png";
 import StarAnimation from "../home/hero/heroBg/heroBg";
 import PaymentDetails from "./paymentdetails/PaymentDetails";
 import Steps from "./steps/Steps";
-import Timer from "./timer/Timer";
 
 const Checkout = () => {
   return (
     <div className={styles.container}>
-      <div
+      {/* <div
         className={styles.background}
         style={{
           background: `url(${formBg})`,
@@ -16,12 +15,13 @@ const Checkout = () => {
           backgroundSize: "cover",
         }}
       >
-        <div className={styles.fullScreen}>
-          <StarAnimation />
-        </div>
+        <Steps />
         <Timer />
+      </div> */}
+      <div className={styles.fullScreen}>
+        <StarAnimation />
       </div>
-      <Steps />
+
       <PaymentDetails />
     </div>
   );

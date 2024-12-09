@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import arrow from "@assets/arrow.svg";
 import pocketCoin from "@assets/pocketCoin.svg";
 import Copy from "../copy/Copy";
@@ -7,10 +7,37 @@ import styles from "./paymentdetails.module.scss"; // Import the CSS module
 import ethereum from "@assets/ethereum.svg";
 import solana from "@assets/solana.svg";
 import { useCheckoutContext } from "@contexts/CheckoutContext";
+import Steps from "../steps/Steps";
 
 const PaymentDetails = () => {
   const { orderDetail } = useCheckoutContext();
   const stringedTransaction: any = localStorage.getItem("transaction");
+  const timerRef = useRef<any>(null);
+  const [remainingTs, setRemainingTs] = useState(0);
+
+  const runTimer = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+
+    timerRef.current = setTimeout(timeerFunction, 500);
+  };
+
+  const timeerFunction = () => {
+    const ts = Math.max(
+      Math.floor(900 + (orderDetail?.creation_time ?? 0) - Date.now() / 1000),
+      0
+    );
+    setRemainingTs(ts);
+    if (ts === 0) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    } else {
+      timerRef.current = setTimeout(timeerFunction, 500);
+    }
+  };
+
   // const transaction = JSON.parse(stringedTransaction);
   const transaction = {
     sending: {
@@ -29,6 +56,7 @@ const PaymentDetails = () => {
     toAmount: "1",
     receivingWallet: "XXXXXXXXXXXXXXXXXXX",
   };
+
   const [generatedPayment] = useState({
     to: "0xb69b4b4a6a5a01e970c04cd8306a25e85cce71f8",
   });
@@ -54,109 +82,117 @@ const PaymentDetails = () => {
 
   return (
     <div className={styles.container}>
-      <h2 className="text-center text-2xl md:text-4xl font-semibold">
+      <h2 className="text-center text-2xl md:text-5xl font-semibold mt-10">
         TRANSACTION DETAILS
       </h2>
-      <div className={styles.transactionDetails}>
-        <div className="w-full flex flex-col md:flex-row gap-4 md:gap-8">
-          <div className="md:w-[62%] flex flex-col gap-4 text-white">
-            <div className="w-full flex flex-col gap-4">
-              <p>Deposit</p>
-              <div className={styles.card}>
-                <span className={styles.depositSection}>
-                  <span>
-                    <img src={exchange.sending.image} alt="eth coin" />
-                  </span>
-                  <h4 className="md:text-2xl font-semibold">
-                    {transaction?.fromAmount} {exchange.sending.name}
-                  </h4>
-                  <p className="capitalize">
-                    {exchange.sending.fullname} Smart Chain Network
-                  </p>
-                </span>
-                <span>
-                  <img className={styles.arrowIcon} src={arrow} alt="arrow" />
-                </span>
-                <span className={styles.walletSection}>
-                  <span className="">
-                    <img
-                      className="scale-[80%] md:scale-100"
-                      src={pocketCoin}
-                      alt="eth coin"
-                    />
-                  </span>
-                  <span className={styles.copyContainer}>
-                    <h4 className="md:text-2xl font-semibold">
-                      {generatedPayment?.to.slice(0, 5)}...
-                      {generatedPayment?.to.slice(
-                        generatedPayment?.to?.length - 4,
-                        generatedPayment?.to?.length
-                      )}
-                    </h4>
-                    <Copy text={generatedPayment?.to} />
-                  </span>
-                  <p>Deposit Wallet Address</p>
-                </span>
-              </div>
+      <div className={styles.transactionDetailWrapper}>
+        <div className={styles.transactionDetailHeader}>
+          <span className={styles.transactionDetailHeader_title}>
+            Processing transaction
+          </span>
+          <div className="flex flex-row items-center gap-3">
+            <span className={styles.transactionDetailHeader_transactionId}>
+              Transaction ID: {orderDetail?.orderId}
+            </span>
+            <Copy text={orderDetail?.orderId!} />
+          </div>
+        </div>
+        <div className="w-full flex flex-col gap-4">
+          <div className={styles.card}>
+            <div className="bg-[#ffe878] text-[#000] py-3 px-5 mb-10 text-[22px] rounded-[10px]">
+              Time left to send deposit:{" "}
+              <span className="text-[#068106] font-bold">{`${(remainingTs / 60)
+                .toString()
+                .padStart(2, "0")}:${(remainingTs % 60)
+                .toString()
+                .padStart(2, "0")}`}</span>
             </div>
-            <div className="w-full flex flex-col gap-4">
-              <p>You Get</p>
-              <div className={styles.card}>
-                <span className={styles.depositSection}>
-                  <span>
-                    <img src={exchange.receiving.image} alt="solana coin" />
+            <div className="flex flex-col md:flex-row justify-between w-full gap-5">
+              <div className="flex flex-col gap-5 grow">
+                <div className="flex flex-row flex-wrap justify-between items-center text-xl">
+                  <div className="w-[340px]">Send in a single transaction:</div>
+                  <div className="flex flex-row grow items-center gap-3 text-2xl font-bold text-[#FFE878]">
+                    <span>{orderDetail?.from_amount}</span>
+                    <span>{orderDetail?.from_symbol}</span>
+                    <Copy text={orderDetail?.from_amount!} />
+                  </div>
+                </div>
+                <div className="flex flex-row flex-wrap justify-between items-center text-xl">
+                  <span className="w-[340px] text-nowrap">
+                    To this address:
                   </span>
-                  <h4 className="md:text-2xl font-semibold">
-                    {transaction?.toAmount} {exchange.receiving.name}
-                  </h4>
-                  <p>{exchange.receiving.fullname} Smart Chain Network</p>
-                </span>
-                <span>
-                  <img className={styles.arrowIcon} src={arrow} alt="arrow" />
-                </span>
-                <span className={styles.walletSection}>
-                  <span className="">
+                  <div className="flex flex-row justify-start items-center gap-3 text-xl font-bold flex-nowrap flex-1">
+                    <span className="overflow-wrap text-wrap break-all min-w-[200px] text-[#FFE878]">
+                      {orderDetail?.paying_address}
+                    </span>
+                    <Copy text={orderDetail?.paying_address!} />
+                  </div>
+                </div>
+                <div className="flex flex-row flex-wrap justify-between items-center text-xl">
+                  <div className="w-[340px]">Deposit Network:</div>
+                  <div className="flex flex-row grow items-center gap-3 text-xl font-bold text-[#FFE878]">
                     <img
-                      className="scale-[80%] md:scale-100"
-                      src={pocketCoin}
-                      alt="eth coin"
+                      className="w-[24px]"
+                      src={orderDetail?.from_network.logo}
+                      alt="from network"
                     />
-                  </span>
-                  <span className={styles.copyContainer}>
-                    <h4 className="md:text-2xl font-semibold">
-                      {transaction?.receivingWallet.slice(0, 5)}...
-                      {transaction?.receivingWallet.slice(
-                        transaction?.receivingWallet?.length - 4,
-                        transaction?.receivingWallet?.length
-                      )}
-                    </h4>
-                    <Copy text={transaction?.receivingWallet} />
-                  </span>
-                  <p>Receiving Wallet Address</p>
-                </span>
+                    <span>{orderDetail?.from_network.name} Network</span>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="w-full flex flex-col gap-4">
-              <p>Hydra ID</p>
-              <div className={styles.card}>
-                <p>66eb166eb166eb166eb166...0b1c5</p>
-                <Copy text="66eb166eb166eb166eb166eb166eb166eb166eb1...0b1c5" />
+              <div className="flex items-center p-3 justify-center bg-white rounded-xl">
+                <QRCode value={"https://google.com"} size={150} />
               </div>
             </div>
           </div>
-          <div className={styles.qrCodeSection}>
-            <p>Scan From Your Wallet</p>
-            <div className="flex items-center p-4 justify-center bg-white rounded-xl">
-              <QRCode value={"https://google.com"} size={180} />
+        </div>
+        <div className="w-full flex flex-col gap-4">
+          {/* <p>You Get</p> */}
+          <div className={styles.card}>
+            <div className="flex flex-col md:flex-row justify-between w-full gap-5">
+              <div className="flex flex-col gap-5 grow">
+                <div className="flex flex-row flex-wrap justify-between items-center text-xl">
+                  <div className="w-[340px]">Transaction type:</div>
+                  <div className="flex flex-row grow items-center gap-3 text-2xl font-bold text-[#FFE878]">
+                    <span>{orderDetail?.from_amount}</span>
+                    <span>{orderDetail?.from_symbol}</span>
+                    <Copy text={orderDetail?.from_amount!} />
+                  </div>
+                </div>
+                <div className="flex flex-row flex-wrap justify-between items-center text-xl">
+                  <span className="w-[340px] text-nowrap">
+                    You will receive:
+                  </span>
+                  <div className="flex flex-row justify-start items-center gap-3 text-xl font-bold flex-nowrap flex-1">
+                    <span className="overflow-wrap text-wrap break-all min-w-[200px] text-[#FFE878]">
+                      {orderDetail?.to_amount}
+                      {orderDetail?.to_symbol}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex flex-row flex-wrap justify-between items-center text-xl">
+                  <div className="w-[340px]">Receiver wallet:</div>
+                  <div className="flex flex-row grow items-center gap-3 text-xl font-bold text-[#FFE878]">
+                    <span>{orderDetail?.to_address}</span>
+                    <Copy text={orderDetail?.to_address!} />
+                  </div>
+                </div>
+                <div className="flex flex-row flex-wrap justify-between items-center text-xl">
+                  <div className="w-[340px]">Receiving network:</div>
+                  <div className="flex flex-row grow items-center gap-3 text-xl font-bold text-[#FFE878]">
+                    <img
+                      className="w-[24px]"
+                      src={orderDetail?.to_network.logo}
+                      alt="from network"
+                    />
+                    <span>{orderDetail?.to_network.name} Network</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className={styles.timeSection}>
-          <p>Creation Time</p>
-          <p className={styles.highlightedText}>
-            {/* {new Date(transaction?.timeCreated).toLocaleString()} */}
-          </p>
-        </div>
+        <Steps />
       </div>
     </div>
   );

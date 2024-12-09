@@ -18,7 +18,7 @@ const SearchIcon: React.FC<{
         cx="9.7905"
         cy="10.5615"
         r="7.31101"
-        stroke={black ? "#212121" : active ? "#F9FAFA" : color}
+        stroke={black ? "#212121" : active ? "#ffe878" : color}
         strokeWidth="1.5"
       />
       <path

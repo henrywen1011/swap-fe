@@ -83,7 +83,7 @@ const TokenSelectModal = () => {
           big
           value={search}
           placeholder="Search Token Name"
-          prefix={<SVGIcon name={ICON_NAMES.SEARCH} />}
+          prefix={<SVGIcon name={ICON_NAMES.SEARCH} active />}
           onChange={onSearchToken}
         />
 

@@ -354,11 +354,7 @@ const SwapForm: React.FC = () => {
                     <img className="w-7" src={fromToken?.logo} alt="" />
                     <span>{fromToken?.display_name.split(" ")[0]}</span>
                     <RotateItem rotation={ROTATE_TYPES.ROT_90}>
-                      <SVGIcon
-                        name={ICON_NAMES.RIGHT_ARROW}
-                        color={"white"}
-                        size={16}
-                      />
+                      <SVGIcon name={ICON_NAMES.RIGHT_ARROW} size={16} />
                     </RotateItem>
                   </div>
                 }
@@ -399,11 +395,7 @@ const SwapForm: React.FC = () => {
                       <span>{toToken?.display_name.split(" ")[0]}</span>
                       <div>
                         <RotateItem rotation={ROTATE_TYPES.ROT_90}>
-                          <SVGIcon
-                            name={ICON_NAMES.RIGHT_ARROW}
-                            color={"white"}
-                            size={16}
-                          />
+                          <SVGIcon name={ICON_NAMES.RIGHT_ARROW} size={16} />
                         </RotateItem>
                       </div>
                     </div>

@@ -74,7 +74,7 @@ const CModal: FC<IModalProps> = ({
                     onClick={onClose ? onClose : closeAllModal}
                     data-testid="close-modal"
                   >
-                    <SVGIcon name={ICON_NAMES.CLOSE} />
+                    <SVGIcon name={ICON_NAMES.CLOSE} active />
                   </button>
                 )}
               </div>

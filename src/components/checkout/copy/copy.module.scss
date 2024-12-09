@@ -1,11 +1,11 @@
 .copyContainer {
-    @apply relative inline-block;
+  @apply relative flex w-[18px] shrink-0;
 }
 
 .copyTooltip {
-    @apply absolute top-0 left-0 bg-gray-700 text-white text-xs rounded px-2 py-1;
+  @apply absolute top-10 -left-5 bg-gray-700 text-white text-xs rounded px-2 py-1;
 }
 
 .copyIcon {
-    @apply cursor-pointer;
+  @apply cursor-pointer w-[18px] shrink-0;
 }

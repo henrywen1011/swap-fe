@@ -6,12 +6,16 @@ import LogoutIcon from "./icons/LogoutIcon";
 import { ISVGIconProps } from "@constants/interfeaces";
 import { ICON_NAMES, ICON_SIZE } from "@constants/config";
 import SearchIcon from "./icons/SearchIcon";
+import SandClockIcon from "./icons/SandClockIcon";
+import AnnoymousIcon from "./icons/AnnoymousIcon";
+import ExchangeIcon from "./icons/ExchangeIcon";
+import CompleteIcon from "./icons/CompleteIcon";
 
 const SVGIcon: React.FC<ISVGIconProps> = ({
   name,
   active = false,
   black = false,
-  color = "#ffe878",
+  color = "#fff",
   size = ICON_SIZE.DEFAULT,
 }) => {
   const getIcon = () => {
@@ -36,6 +40,42 @@ const SVGIcon: React.FC<ISVGIconProps> = ({
       case ICON_NAMES.CLOSE_OUTLINE_CIRCLE:
         return (
           <CloseOutlineCircleIcon
+            active={active}
+            black={black}
+            color={color}
+            size={size}
+          />
+        );
+      case ICON_NAMES.SAND_CLOCK:
+        return (
+          <SandClockIcon
+            active={active}
+            black={black}
+            color={color}
+            size={size}
+          />
+        );
+      case ICON_NAMES.COMPLETE:
+        return (
+          <CompleteIcon
+            active={active}
+            black={black}
+            color={color}
+            size={size}
+          />
+        );
+      case ICON_NAMES.ANNONYMOUS:
+        return (
+          <AnnoymousIcon
+            active={active}
+            black={black}
+            color={color}
+            size={size}
+          />
+        );
+      case ICON_NAMES.EXCHANGE:
+        return (
+          <ExchangeIcon
             active={active}
             black={black}
             color={color}

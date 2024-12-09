@@ -1,41 +1,52 @@
-
 .container {
-    @apply w-full max-w-[80rem] lg:max-w-[80rem] gap-[3rem] text-white flex flex-col items-center;
+  @apply w-full max-w-[80rem] lg:max-w-[80rem] gap-[3rem] text-white flex flex-col items-center;
 }
 
-.transactionDetails {
-    @apply w-full rounded-[2rem] p-4 md:p-8 flex flex-col gap-10;
-    background: linear-gradient(to right, #faeb7a28, #faeb7a4e, #faeb7a28);
-}
+.transactionDetailWrapper {
+  @apply w-full rounded-[2rem] p-4 md:p-8 flex flex-col gap-5;
+  background: linear-gradient(to right, #faeb7a28, #faeb7a4e, #faeb7a28);
+  @apply backdrop-blur-md;
 
-.card {
-    @apply w-full bg-[#ffffff20] rounded-[1.5rem] p-4 md:p-[2rem] flex justify-between items-center;
+  .transactionDetailHeader {
+    @apply w-full flex flex-row justify-between;
+    &_title {
+      font-size: 30px;
+    }
+
+    &_transactionId {
+      font-size: 16px;
+    }
+  }
+
+  .card {
+    @apply w-full bg-[#ffffff20] rounded-[1.5rem] p-4 md:p-[2rem] flex flex-col justify-between items-start;
+  }
 }
 
 .depositSection {
-    @apply flex w-[35%] flex-col gap-2;
+  @apply flex w-[35%] flex-col gap-2;
 }
 
 .arrowIcon {
-    @apply scale-[60%] md:scale-100;
+  @apply scale-[60%] md:scale-100;
 }
 
 .walletSection {
-    @apply flex flex-col items-end md:items-start gap-2;
+  @apply flex flex-col items-end md:items-start gap-2;
 }
 
 .copyContainer {
-    @apply flex gap-4 items-center;
+  @apply flex gap-4 items-center;
 }
 
 .qrCodeSection {
-    @apply md:w-[38%] flex flex-col justify-center items-center gap-4 bg-[#ffffff20] p-[2rem] rounded-[1.5rem];
+  @apply md:w-[38%] flex flex-col justify-center items-center gap-4 bg-[#ffffff20] p-[2rem] rounded-[1.5rem];
 }
 
 .timeSection {
-    @apply w-full bg-[#ffffff20] flex flex-col gap-6 justify-center items-center p-8 rounded-[1.5rem];
+  @apply w-full bg-[#ffffff20] flex flex-col gap-6 justify-center items-center p-8 rounded-[1.5rem];
 }
 
 .highlightedText {
-    @apply text-[#eeb91d] text-lg;
+  @apply text-[#eeb91d] text-lg;
 }

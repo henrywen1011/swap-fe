@@ -16,7 +16,7 @@ const CloseIcon: React.FC<{
     >
       <path
         d="M6 18L17.94 6M18 18L6.06 6"
-        stroke={black ? "#212121" : active ? "#F9FAFA" : color}
+        stroke={black ? "#212121" : active ? "#ffe878" : color}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
