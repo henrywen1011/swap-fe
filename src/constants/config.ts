@@ -1,6 +1,7 @@
 import { Fetcher } from "swr";
 
-export const SERVER_URL = "http://localhost:5800";
+export const SERVER_URL = "https://api.hydraswap.xyz"; //"http://localhost:5000";
+
 export const API_URIS = {
   FETCH_TOKENS_AND_NETWORKS: `${SERVER_URL}/assets`,
   FETCH_SWAP_QUOTE: `${SERVER_URL}/quotes`,

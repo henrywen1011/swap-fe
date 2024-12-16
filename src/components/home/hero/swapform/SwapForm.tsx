@@ -470,13 +470,6 @@ const SwapForm: React.FC = () => {
           </a>
         </span>
       </div>
-
-      {/* <CoinModal
-        displayModal={displayModal}
-        toggleDisplayModal={toggleDisplayModal}
-        toggleExchange={toggleExchange}
-        data={dataType.current}
-      /> */}
     </>
   );
 };
