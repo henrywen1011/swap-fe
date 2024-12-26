@@ -21,9 +21,11 @@
   font-weight: 600;
   padding: 0 2rem;
   outline: none;
+  color: white;
 
   &._small {
     height: 36px;
+    padding: 0 12px;
 
     &._rounded {
       border-radius: 8px;
@@ -157,7 +159,7 @@
   }
 
   &._active {
-    color: #f9fafa;
+    color: black;
     background-color: variables.$primary-color;
   }
   &._outline {

@@ -1,45 +1,45 @@
 /* Navbar.module.css */
 
 .navbarContainer {
-    @apply md:flex hidden md:px-[5rem] w-full max-w-[80rem] lg:max-w-[90rem] p-8 justify-between items-center;
-  }
-  
-  .tabs {
-    @apply flex gap-4;
-  }
-  
-  .tabActive {
-    @apply text-[#EEB91D] cursor-pointer;
-  }
-  
-  .tabInactive {
-    @apply text-white cursor-pointer;
-  }
-  
-  .accountButton {
-    @apply font-semibold p-3 px-8 rounded-full text-black bg-gradient-to-r from-[#EEB91D] to-[#FFE878];
-  }
-  
-  .hamburger {
-    @apply focus:outline-none;
-  }
-  
-  .mobileNavbar {
-    @apply md:hidden flex w-full p-4 bg-black justify-between items-center z-[1000];
-  }
-  
-  .mobileMenu {
-    @apply fixed top-0 left-0 h-full w-[70%] bg-black text-white z-50 transform;
-  }
-  
-  .mobileMenuOpen {
-    @apply translate-x-0;
-  }
-  
-  .mobileMenuClosed {
-    @apply translate-x-[-100%];
-  }
-  
-  .overlay {
-    @apply fixed inset-0 bg-black opacity-50 z-40;
-  }
+  @apply md:flex hidden md:px-[5rem] w-full max-w-[80rem] lg:max-w-[90rem] p-8 justify-between items-center;
+}
+
+.tabs {
+  @apply flex gap-10 items-center;
+}
+
+.tabActive {
+  @apply text-[#EEB91D] cursor-pointer;
+}
+
+.tabInactive {
+  @apply text-white cursor-pointer;
+}
+
+.accountButton {
+  @apply font-semibold p-3 px-8 rounded-full text-black bg-gradient-to-r from-[#EEB91D] to-[#FFE878];
+}
+
+.hamburger {
+  @apply focus:outline-none;
+}
+
+.mobileNavbar {
+  @apply md:hidden flex w-full p-4 bg-black justify-between items-center z-[1000];
+}
+
+.mobileMenu {
+  @apply fixed top-0 left-0 h-full w-[100%] bg-black text-white z-50 transform;
+}
+
+.mobileMenuOpen {
+  @apply translate-x-0;
+}
+
+.mobileMenuClosed {
+  @apply translate-x-[-100%];
+}
+
+.overlay {
+  @apply fixed inset-0 bg-black opacity-50 z-40;
+}

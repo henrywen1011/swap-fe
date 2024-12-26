@@ -10,6 +10,7 @@ import SandClockIcon from "./icons/SandClockIcon";
 import AnnoymousIcon from "./icons/AnnoymousIcon";
 import ExchangeIcon from "./icons/ExchangeIcon";
 import CompleteIcon from "./icons/CompleteIcon";
+import HamburgerIcon from "./icons/HamburgerIcon";
 
 const SVGIcon: React.FC<ISVGIconProps> = ({
   name,
@@ -76,6 +77,15 @@ const SVGIcon: React.FC<ISVGIconProps> = ({
       case ICON_NAMES.EXCHANGE:
         return (
           <ExchangeIcon
+            active={active}
+            black={black}
+            color={color}
+            size={size}
+          />
+        );
+      case ICON_NAMES.HAMBURGER:
+        return (
+          <HamburgerIcon
             active={active}
             black={black}
             color={color}

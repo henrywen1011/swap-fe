@@ -18,6 +18,7 @@ export const ICON_NAMES = {
   ANNONYMOUS: "annonymjo-icon",
   EXCHANGE: "exchange-icon",
   COMPLETE: "complete-icon",
+  HAMBURGER: "hamburger-icon",
 };
 
 export const ICON_SIZE = {

@@ -29,6 +29,7 @@ import { fetchServerData } from "@apis/baseApiRequest";
 import FetchingLoader from "@components/reusables/FetchingLoader";
 import "rc-checkbox/assets/index.css";
 import { validateWalletAddress } from "@utils/validator";
+import { useWindowSize } from "@hooks/useWindowSize";
 
 const SwapForm: React.FC = () => {
   const { modals, openModal, isPageLoading } = useGlobalContext();
@@ -41,6 +42,7 @@ const SwapForm: React.FC = () => {
   const [receivingWallet, setReveivingWallet] = useState("");
   const controllerRef = useRef<AbortController | null>(null);
   const [checkPTR, setCheckPTR] = useState(false);
+  const { isMobile } = useWindowSize();
   const [buttonState, setButtonState] = useState<SwapButtonStateType>(
     SWAP_BUTTON_STATE.DEFAULT
   );
@@ -84,7 +86,7 @@ const SwapForm: React.FC = () => {
     );
   };
 
-  const [displayedModal, toggleModal] = useState("swap");
+  const [displayedModal, toggleModal] = useState(buttons[0].name);
 
   const navigate = useNavigate();
 
@@ -293,9 +295,10 @@ const SwapForm: React.FC = () => {
           <div className={styles.buttonContainer}>
             {buttons.map((button, index) => (
               <CButton
+                tiny={isMobile}
+                active={button.clicked}
                 key={index}
                 onClick={() => handleButtonPress(button.name)}
-                outline
                 bordered={false}
                 type={BUTTON_TYPES.PILLED}
                 buttonType="button"
@@ -314,7 +317,7 @@ const SwapForm: React.FC = () => {
           </div>
         </div>
 
-        {displayedModal === "swap" ? (
+        {displayedModal === buttons[0].name ? (
           <div className={styles.gridContainer}>
             <div className={styles.inputWrapper}>
               <div className={styles.inputLabel}>

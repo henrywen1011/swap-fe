@@ -53,7 +53,7 @@
     gap: 12px;
     font-size: 16px;
     background-color: variables.$background-input;
-    border: 0px solid variables.$border-color-input;
+    border: 1px solid variables.$transparent;
 
     ._prefix {
       display: flex;
@@ -87,11 +87,11 @@
     }
 
     &._big {
-      @apply h-[60px] md:h-[70px] rounded-[16px] md:rounded-[20px];
+      @apply h-[50px] md:h-[50px] rounded-[16px] md:rounded-[20px];
       padding: 8px 12px;
 
       input {
-        @apply text-[14px] md:text-[18px];
+        @apply text-[14px] md:text-[16px] font-normal;
       }
     }
 

@@ -8,6 +8,7 @@ import CheckoutProvider from "@contexts/CheckoutContext";
 import Header from "@components/header/Header";
 import BlinkingStars from "@components/reusables/StarsBg";
 import PageLoader from "@components/reusables/PageLoader";
+import SwapPage from "@pages/SwapPage";
 
 function App() {
   return (
@@ -23,6 +24,14 @@ function App() {
               </SwapProvider>
             }
           />
+          {/* <Route
+            path="swap"
+            element={
+              <SwapProvider>
+                <SwapPage />
+              </SwapProvider>
+            }
+          /> */}
           <Route
             path="checkout/:order_id"
             element={
@@ -31,7 +40,7 @@ function App() {
               </CheckoutProvider>
             }
           />
-          <Route path="how-it-works" element={<ExchangePage />} />
+
           <Route path="privacy" element={<PrivacyPage />} />
         </Route>
       </Routes>

@@ -105,7 +105,7 @@ const Home = () => {
         </div>
         <Provision />
       </div>
-      <Recommendations />
+      {/* <Recommendations /> */}
     </div>
   );
 };

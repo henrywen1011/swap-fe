@@ -14,12 +14,12 @@ const Providers = () => {
   return (
     <div className={styles.liquidityContainer}>
       <div className="relative mt-[20rem] z-[-1]">
-        <div className="absolute left-1/2 top-[-15vh] z-[-1] transform -translate-x-1/2">
+        <div className="absolute left-1/2 top-[-25vh] z-[-1] transform -translate-x-1/2">
           <Globe />
         </div>
       </div>
-      <h3 className={styles.liquidityTitle}>LIQUIDITY PROVIDERS</h3>
-      <div className={styles.liquidityProviders}>
+      {/* <h3 className={styles.liquidityTitle}>LIQUIDITY PROVIDERS</h3> */}
+      {/* <div className={styles.liquidityProviders}>
         {providers.map((provider, index) => (
           <img
             key={index}
@@ -28,7 +28,7 @@ const Providers = () => {
             alt={`Provider ${index + 1}`}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
