@@ -77,7 +77,7 @@ const SwapForm: React.FC = () => {
   }, [fromAmount, fromToken, toToken]);
 
   const handleButtonPress = (payload: string) => {
-    toggleModal(payload.toLowerCase());
+    // toggleModal(payload.toLowerCase());
     toggleButtons((prevState) =>
       prevState.map((button) => ({
         ...button,
@@ -85,8 +85,6 @@ const SwapForm: React.FC = () => {
       }))
     );
   };
-
-  const [displayedModal, toggleModal] = useState(buttons[0].name);
 
   const navigate = useNavigate();
 
@@ -317,7 +315,7 @@ const SwapForm: React.FC = () => {
           </div>
         </div>
 
-        {displayedModal === buttons[0].name ? (
+        {buttons[0].clicked ? (
           <div className={styles.gridContainer}>
             <div className={styles.inputWrapper}>
               <div className={styles.inputLabel}>
